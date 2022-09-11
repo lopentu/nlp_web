@@ -6,6 +6,7 @@ name = "pypi"
 [packages]
 scrapy = "*"
 pyquery = "*"
+pydantic = "*"
 
 [dev-packages]
 
