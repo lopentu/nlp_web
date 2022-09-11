@@ -9,6 +9,7 @@ pyquery = "*"
 pydantic = "*"
 requests = "*"
 scrapy-user-agents = "*"
+scrapy-fake-useragent = "*"
 
 [dev-packages]
 
