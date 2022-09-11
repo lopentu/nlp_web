@@ -7,6 +7,8 @@ name = "pypi"
 scrapy = "*"
 pyquery = "*"
 pydantic = "*"
+requests = "*"
+scrapy-user-agents = "*"
 
 [dev-packages]
 
