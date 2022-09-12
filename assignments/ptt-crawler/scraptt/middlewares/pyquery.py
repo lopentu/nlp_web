@@ -1,3 +1,4 @@
+from ..configs import PTT
 from pyquery import PyQuery
 from scrapy.http.response.html import HtmlResponse
 
@@ -8,7 +9,5 @@ class PyqueryMiddleware:
     """
 
     def process_response(self, request, response, spider) -> HtmlResponse:
-        response.dom = PyQuery(response.text).make_links_absolute(
-            "https://www.ptt.cc/bbs/"
-        )
+        response.dom = PyQuery(response.text).make_links_absolute(PTT)
         return response
