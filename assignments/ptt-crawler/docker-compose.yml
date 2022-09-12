@@ -1,0 +1,8 @@
+version: "3"
+
+services:
+  scraptt:
+    build: .
+    command: bash -c "scrapy crawl ptt -a boards=Soft_Job -a index_from=1500 -a index_to=1500"
+    volumes:
+      - "./data:/app/data"
