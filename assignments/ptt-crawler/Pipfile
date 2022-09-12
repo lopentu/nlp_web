@@ -10,6 +10,8 @@ pydantic = "*"
 requests = "*"
 scrapy-user-agents = "*"
 scrapy-fake-useragent = "*"
+redis = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
