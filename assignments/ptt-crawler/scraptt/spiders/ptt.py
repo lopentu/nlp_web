@@ -26,7 +26,7 @@ class PttSpider(BaseSpider):
         ups = comment_counter["推"]
         downs = comment_counter["噓"]
         comments = comment_counter["→"]
-        city, country = get_ip_loc(ip)
+        city, country = get_ip_loc(ip, self.ip_cache)
 
         data = {
             "board": board,
