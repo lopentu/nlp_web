@@ -1,6 +1,8 @@
+redis==4.3.4
 scrapy==2.6.2
 pyquery==1.4.3
 pydantic==1.10.2
 requests==2.28.1
+python-dotenv==0.21.0
 scrapy-user-agents==0.1.1
 scrapy-fake-useragent==1.4.4
