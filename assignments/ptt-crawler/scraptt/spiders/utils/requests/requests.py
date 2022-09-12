@@ -22,6 +22,11 @@ def fetch_ptt_boards(
 
     for board in boards_list:
         if index_from is not None and index_to is not None:
+            if int(index_from) > int(index_to):
+                raise ValueError(
+                    "the value of `index_from` cannot be greater than `index_to`."
+                )
+
             for index in range(int(index_from), int(index_to) + 1):
                 url = PTT_BOARD.format(board, index)
                 yield Request(url, cookies=COOKIES, callback=callback)
