@@ -1,4 +1,4 @@
-from .configs import COOKIES
+from .configs import PTT, PTT_BOARD, COOKIES
 
 
-__all__ = ["COOKIES"]
+__all__ = ["PTT", "PTT_BOARD", "COOKIES"]
