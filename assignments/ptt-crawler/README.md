@@ -1,4 +1,12 @@
 # **ptt-crawler**
+This project scrapes the post details from the website [PTT](https://term.ptt.cc/), and writes the scraped item to csv files.
+
+
+| author |  alias |title | date | ip | city | country  | ups | downs | comments | url |
+|----|----|----|----|----|----|----|----|----|----|----|
+| jason789780 | majiLove | \[請益\] google問題的精確與方向	 | 2022-09-06 10:39:42 | 223.137.68.113 | Yilan | Taiwan | 9	 | 0 | 29	 | https://www.ptt.cc/bbs/Soft_Job/M.1662431984.A.A3F.html |
+| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+ 
 
 
 ## **Documentation**
