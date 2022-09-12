@@ -1,7 +1,4 @@
 import re
-import requests
-from typing import Tuple
-from requests.adapters import HTTPAdapter, Retry
 from scrapy.http.response.html import HtmlResponse
 
 
@@ -31,25 +28,6 @@ async def get_ip(response: HtmlResponse) -> str:
         return re.search(r"來自: ([0-9.]*)", text).group(1)
 
     except:
-        text = [f2_span for f2_span in f2_spans_list if re.match(r"※ 編輯:", f2_span)][0]
-        return re.findall(r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}", text)[-1]
-
-
-def get_ip_loc(ip: str) -> Tuple[str, str]:
-    """The get_ip_loc function locates an ip address.
-
-    Args:
-        ip (str): the ip from a ptt post
-    Returns:
-        a tuple, containing city and counttry.
-    """
-
-    session = requests.Session()
-    retries = Retry(total=5, backoff_factor=1, status_forcelist=[502, 503, 504])
-    session.mount("http://", HTTPAdapter(max_retries=retries))
-
-    response = requests.get(f"http://www.geoplugin.net/json.gp?ip={ip}")
-    result = response.json()
-    city = result["geoplugin_city"]
-    country = result["geoplugin_countryName"]
-    return city, country
+        ip_match = r"\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}"
+        text = [span for span in f2_spans_list if re.findall(ip_match, span)][-1]
+        return re.findall(ip_match, text)[-1]
