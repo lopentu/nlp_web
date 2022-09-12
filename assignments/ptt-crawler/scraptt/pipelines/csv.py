@@ -9,7 +9,7 @@ class CsvPipeline:
     The CsvPipeline object writes the scraped item to csv.
     """
 
-    def open_spider(self, spider: PttSpider):
+    def open_spider(self, spider: PttSpider) -> None:
         self.exporters_list: Dict[str, Tuple[BaseItemExporter, BufferedWriter]] = {}
 
     def _exporter_for_item(self, item: Dict[str, Any]) -> CsvItemExporter:
@@ -23,12 +23,12 @@ class CsvPipeline:
 
         return self.exporters_list[board][0]
 
-    def process_item(self, item: Dict[str, Any], spider: PttSpider):
+    def process_item(self, item: Dict[str, Any], spider: PttSpider) -> Dict[str, Any]:
         exporter = self._exporter_for_item(item)
         exporter.export_item(item)
         return item
 
-    def close_spider(self, spider: PttSpider):
+    def close_spider(self, spider: PttSpider) -> None:
         for exporter, csv_file in self.exporters_list.values():
             exporter.finish_exporting()
             csv_file.close()
