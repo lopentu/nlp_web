@@ -43,7 +43,6 @@ class BaseSpider(Spider, ABC):
         )
 
     def parse_index(self, response: HtmlResponse):
-
         title_tags = get_title_tags(response)
 
         if self.scrap_all:
