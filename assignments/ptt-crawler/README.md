@@ -96,3 +96,8 @@ docker-compose up
 ```
 
 It is suggested that the arugment `ip_cache` should be set to `true` when you run the crawler via Docker. The reason is that the crawler will connect to Redis container, and there is no need for you to have Redis in your local machine. Most importantly, the performance of the crawler will be increased! 
+
+
+
+## Contact
+If you have any suggestion or question, please do not hesitate to email us at  shukai@gmail.com or philcoke35@gmail.com
