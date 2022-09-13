@@ -1,5 +1,5 @@
 # **ptt-crawler**
-This project scrapes the post details from the website [PTT](https://term.ptt.cc/), and writes the scraped item to csv files.
+This project scrapes the post details from the website [PTT](https://term.ptt.cc/), and writes the scraped items to csv files.
 
 
 | author |  alias |title | date | ip | city | country  | ups | downs | comments | url |
