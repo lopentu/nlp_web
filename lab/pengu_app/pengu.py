@@ -12,9 +12,9 @@ pengu_df = pd.read_csv('penguins.csv')
 # st.write(pengu_df.head(10))
 
 
-# selected_species = st.selectbox('要看什麼物種？',
-#     ['Adelie', 'Gentoo', 'Chinstrap'])
-# pengu_df = pengu_df[pengu_df['species'] == selected_species]
+selected_species = st.selectbox('要看什麼物種？',
+    ['Adelie', 'Gentoo', 'Chinstrap'])
+pengu_df = pengu_df[pengu_df['species'] == selected_species]
 
 selected_x_var = st.selectbox('X 軸是什麼？', 
   ['bill_length_mm', 'bill_depth_mm', 'flipper_length_mm', 'body_mass_g']) 
@@ -22,7 +22,7 @@ selected_y_var = st.selectbox('Y 軸是什麼？',
   ['bill_depth_mm', 'bill_length_mm', 'flipper_length_mm', 'body_mass_g']) 
 
 
-### (in-class exercise) filter out by gender
+## (in-class exercise) filter out by gender
 # selected_gender = st.selectbox('What gender do you want to filter for?',
 # ['all', 'male', 'female'])
 
