@@ -1,4 +1,6 @@
-# **ptt-crawler**
+# **批踢踢爬蟲 ptt-crawler**
+### 學術研究用途，請勿不當使用。
+
 This project scrapes the post details from the website [PTT](https://term.ptt.cc/), and writes the scraped items to csv files.
 
 
@@ -9,7 +11,7 @@ This project scrapes the post details from the website [PTT](https://term.ptt.cc
  
 
 
-## **Documentation**
+## **說明**
 ### 1. Installation
 
 1. Python version
@@ -27,7 +29,7 @@ This project scrapes the post details from the website [PTT](https://term.ptt.cc
     ```
     
 
-### 2. Usage
+### 2. 使用方式
 
 1. Commands
 ```
@@ -74,7 +76,7 @@ positional arguments:
 
  
 
-### 3. Docker
+### 3. 使用 Docker
 A Docker setup is provided for the crawler.
 
 To run the crawler, go to the `docker-compose.yml` file to edit the command:
