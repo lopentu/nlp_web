@@ -1,0 +1,7 @@
+aiofiles==0.8.0
+cwngraph==0.4.0
+distiltag==0.2.2
+streamlit==1.12.2
+python-dotenv==0.20.0
+cwnsensetagger==0.1.6
+ckip-transformers==0.3.2

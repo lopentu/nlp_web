@@ -1,0 +1,8 @@
+[logger]
+level = "info"
+messageFormat = "%(asctime)s  %(message)s"
+
+[theme]
+# Primary accent for interactive elements
+primaryColor = '#228be6'
+backgroundColor = 'rgb(255, 255, 255)'
