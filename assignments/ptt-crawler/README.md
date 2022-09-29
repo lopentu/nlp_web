@@ -25,7 +25,7 @@ This project scrapes the post details from the website [PTT](https://term.ptt.cc
 
 3. Install Requirement
     ```bash
-    cd nlp_web/assignments/ptt-crawler && pip install -r requirement.txt      
+    cd nlp_web/assignments/ptt-crawler && pip install -r requirements.txt      
     ```
     
 
