@@ -1,17 +1,16 @@
+import json
 from pathlib import Path
 from typing import Any, Dict
 from datetime import datetime
-from .base import BasePipeline
 from ..spiders import PttSpider
-from scrapy.exporters import JsonItemExporter
 
 
-class JsonPipeline(BasePipeline):
+class JsonPipeline:
     """
     The JsonPipeline object writes the scraped item to json.
     """
 
-    def _exporter_for_item(self, item: Dict[str, Any], spider: PttSpider):
+    def process_item(self, item: Dict[str, Any], spider: PttSpider) -> None:
         data_dir = spider.data_dir
         board = item["board"]
         timestamp = int(
@@ -24,15 +23,7 @@ class JsonPipeline(BasePipeline):
         file_path = f"{dir_path}/{formatted_date}_{item['post_id']}"
         Path(dir_path).mkdir(parents=True, exist_ok=True)
 
-        if file_path not in self.exporters_list:
-            file = open(f"{file_path}.json", "wb")
-            exporter = JsonItemExporter(file, encoding="utf-8")
-            exporter.start_exporting()
-            self.exporters_list[file_path] = (exporter, file)
+        with open(f"{file_path}.json", "w", encoding="utf-8") as file:
+            json.dump(item, file, ensure_ascii=False)
 
-        return self.exporters_list[file_path][0]
-
-    def process_item(self, item: Dict[str, Any], spider: PttSpider) -> Dict[str, Any]:
-        exporter = self._exporter_for_item(item, spider)
-        exporter.export_item(item)
         return item
