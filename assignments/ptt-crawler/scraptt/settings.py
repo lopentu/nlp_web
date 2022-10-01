@@ -67,7 +67,7 @@ EXTENSIONS = {
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     "scraptt.pipelines.JsonPipeline": 300,
-    "scraptt.pipelines.CsvPipeline": 400,
+    "scraptt.pipelines.CsvPipeline": 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
