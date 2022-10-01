@@ -1,14 +1,8 @@
 # **批踢踢爬蟲 ptt-crawler**
 ### 學術研究用途，請勿不當使用。
 
-This project scrapes the post details from the website [PTT](https://term.ptt.cc/), and writes the scraped items to csv files.
 
-
-| author |  alias |title | date | ip | city | country  | ups | downs | comments | url |
-|----|----|----|----|----|----|----|----|----|----|----|
-| jason789780 | majiLove | \[請益\] google問題的精確與方向	 | 2022-09-06 10:39:42 | 223.137.68.113 | Yilan | Taiwan | 9	 | 0 | 29	 | https://www.ptt.cc/bbs/Soft_Job/M.1662431984.A.A3F.html |
-| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
- 
+This project scrapes/crawls post content and comments from the website [PTT](https://term.ptt.cc/), and writes the scraped items to csv and json files. 
 
 
 ## **說明**
@@ -74,7 +68,46 @@ positional arguments:
 
   >Note: the comma in the argument `boards` cannot have spaces. It cannot be `boards=Soft_Job, Baseball` or  `boards=["Soft_Job", "Baseball"]`.
 
- 
+
+2. The scraped data will be saved as csv and json files, and has the following format:
+
+* csv
+
+  | author |  alias |title | date | ip | city | country  | ups | downs | comments | url |
+  |----|----|----|----|----|----|----|----|----|----|----|
+  | jason789780 | majiLove | \[請益\] google問題的精確與方向	 | 2022-09-06 10:39:42 | 223.137.68.113 | Yilan | Taiwan | 9	 | 0 | 29	 | https://www.ptt.cc/bbs/Soft_Job/M.1662431984.A.A3F.html |
+  | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+  
+
+
+* json
+  
+  ```json
+  {
+    "board": "Soft_Job",
+    "post_id": "M.1663817618.A.CB0",
+    "author": "stanley171",
+    "alias": "劍魔之煞",
+    "title": "[心得] 美國軟體工程師 薪資結構",
+    "date": "2022-09-22 11:33:36",
+    "ip": "216.107.222.98",
+    "city": "Lewiston",
+    "country": "United States",
+    "url": "https://www.ptt.cc/bbs/Soft_Job/M.1663817618.A.CB0.html",
+    "body": "小弟在美國軟體界工作三年多了，想把 ...",
+    "post_vote": { "ups": 29, "downs": 1, "comments": 15 },
+    "comments": [
+      {
+        "type": "downs",
+        "author": "hegemon",
+        "content": "來這邊推自己文章的流量大可不必，把全文貼出來再補推",
+        "order": "1"
+      },
+      ...
+    ]
+  }
+  ```
+
 
 ### 3. 使用 Docker
 A Docker setup is provided for the crawler.
