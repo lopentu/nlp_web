@@ -75,9 +75,8 @@ positional arguments:
 
   | author |  alias |title | date | ip | city | country  | ups | downs | comments | url |
   |----|----|----|----|----|----|----|----|----|----|----|
-  | jason789780 | majiLove | \[請益\] google問題的精確與方向	 | 2022-09-06 10:39:42 | 223.137.68.113 | Yilan | Taiwan | 9	 | 0 | 29	 | https://www.ptt.cc/bbs/Soft_Job/M.1662431984.A.A3F.html |
+  | Tesarus | 提姆休斯 | \[問卷\] 居家工作者睡眠研究	 | 2022-09-27 17:38:10 | 122.116.101.218 | New Taipei | Taiwan | 0 | 0 | 2	 | https://www.ptt.cc/bbs/Soft_Job/M.1664271492.A.42E.html |
   | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
-  
 
 
 * json
@@ -85,25 +84,30 @@ positional arguments:
   ```json
   {
     "board": "Soft_Job",
-    "post_id": "M.1663817618.A.CB0",
-    "author": "stanley171",
-    "alias": "劍魔之煞",
-    "title": "[心得] 美國軟體工程師 薪資結構",
-    "date": "2022-09-22 11:33:36",
-    "ip": "216.107.222.98",
-    "city": "Lewiston",
-    "country": "United States",
-    "url": "https://www.ptt.cc/bbs/Soft_Job/M.1663817618.A.CB0.html",
-    "body": "小弟在美國軟體界工作三年多了，想把 ...",
-    "post_vote": { "ups": 29, "downs": 1, "comments": 15 },
+    "post_id": "M.1664271492.A.42E",
+    "author": "Tesarus",
+    "alias": "提姆休斯",
+    "title": "[問卷] 居家工作者睡眠研究",
+    "date": "2022-09-27 17:38:10",
+    "ip": "122.116.101.218",
+    "city": "New Taipei",
+    "country": "Taiwan",
+    "url": "https://www.ptt.cc/bbs/Soft_Job/M.1664271492.A.42E.html",
+    "body": "大家好，...",
+    "post_vote": { "ups": 0, "downs": 0, "comments": 2 },
     "comments": [
       {
-        "type": "downs",
-        "author": "hegemon",
-        "content": "來這邊推自己文章的流量大可不必，把全文貼出來再補推",
+        "type": "comments",
+        "author": "keel90135",
+        "content": "看標題以為是抓上班偷睡覺",
         "order": "1"
       },
-      ...
+      {
+        "type": "comments",
+        "author": "ainori520",
+        "content": "我有認識幾個居家無工作者",
+        "order": "2"
+      }
     ]
   }
   ```
