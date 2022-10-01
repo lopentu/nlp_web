@@ -51,7 +51,7 @@ positional arguments:
 
 * Crawl all the posts of a board from a year in the past:
   ```bash
-  scrapy crawl ptt -a boards=Soft_Job -a since=2020
+  scrapy crawl ptt -a boards=Soft_Job -a since=2022
   ```
 
 * Crawl the posts of a board based on html indexes:
