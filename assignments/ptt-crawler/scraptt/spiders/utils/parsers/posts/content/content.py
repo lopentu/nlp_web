@@ -22,11 +22,11 @@ class ContentCleaner:
             .html()
         )
 
-    def strip_content(self, content: PyQuery) -> str:
+    async def strip_content(self, content: PyQuery) -> str:
         stripped_content = HTMLStripper.strip_tags(content)
         return re.sub(r"※ 發信站.*|※ 文章網址.*|※ 編輯.*", "", stripped_content).strip("\r\n-")
 
-    def remove_quotes(self, stripped_content: str):
+    async def remove_quotes(self, stripped_content: str) -> str:
         quotes = re.findall("※ 引述.*|\n: .*", stripped_content)
 
         for quote in quotes:
@@ -34,10 +34,13 @@ class ContentCleaner:
 
         return stripped_content.strip("\n ")
 
-    def clean(self):
-        stripped_content = self.strip_content(self.content_clone)
+    async def clean(self) -> str:
+        if not self.content:
+            return ""
+
+        stripped_content = await self.strip_content(self.content_clone)
 
         if stripped_content == "" or stripped_content is None:
-            return None
+            return ""
 
-        return self.remove_quotes(stripped_content)
+        return await self.remove_quotes(stripped_content)
