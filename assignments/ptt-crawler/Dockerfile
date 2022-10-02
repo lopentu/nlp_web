@@ -10,7 +10,8 @@ RUN pip install pipenv && \
     pipenv install --deploy --system && \
     apt-get remove -y gcc python3-dev libssl-dev && \
     apt-get autoremove -y && \
-    pip uninstall pipenv -y
+    pip uninstall pipenv -y \
+    && rm -rf /var/lib/apt/lists/*
 
 COPY ./scrapy.cfg ./
 COPY ./scraptt ./scraptt
