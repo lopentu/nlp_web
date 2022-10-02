@@ -10,12 +10,12 @@
 2. Clone repository
 
     ```bash
-    git clone git@github.com:lopentu/nlp-pipe.git
+    git clone git@github.com:lopentu/nlp_web.git
     ```
 
 3. Install Requirement
     ```bash
-    cd nlp-pipe && pip install -r requirement.txt      
+    cd nlp_web/assignments/twNLP-app && pip install -r requirements.txt      
     ```
 
 
@@ -24,7 +24,7 @@ There are two main ways to run the app:
 
 - run with Python 
 
-  First make sure you are in the `nlp-pipe` folder, and then simply run:
+  First make sure you are in the `twNLP-app` folder, and then simply run:
 
   ```bash 
   streamlit run src/app.py
