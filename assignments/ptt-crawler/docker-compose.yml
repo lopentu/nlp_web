@@ -11,7 +11,7 @@ services:
       - redis
 
     # define your crawler here!
-    command: bash -c "scrapy crawl ptt -a boards=Soft_Job -a index_from=1500 -a index_to=1500 -a ip_cache=True"
+    command: bash -c "scrapy crawl ptt -a boards=Soft_Job -a index_from=1722 -a index_to=1723 -a ip_cache=True"
 
     volumes:
       - "./data:/app/data"
