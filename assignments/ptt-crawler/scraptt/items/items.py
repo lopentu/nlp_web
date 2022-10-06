@@ -1,5 +1,5 @@
-from typing import Union
 from pydantic import BaseModel
+from typing import Union, Dict, List
 
 
 class ScrapttItem(BaseModel):
@@ -8,6 +8,7 @@ class ScrapttItem(BaseModel):
     """
 
     board: str
+    post_id: str
     author: str
     alias: str
     title: str
@@ -15,7 +16,7 @@ class ScrapttItem(BaseModel):
     ip: str
     city: Union[str, None]
     country: Union[str, None]
-    ups: int
-    downs: int
-    comments: int
     url: str
+    body: str
+    post_vote: Dict[str, int]
+    comments: List[Dict[str, str]]

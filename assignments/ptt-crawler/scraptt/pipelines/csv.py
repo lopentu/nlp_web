@@ -1,7 +1,8 @@
 from pathlib import Path
-from io import BufferedWriter
+from .utils import get_items
 from datetime import datetime
 from ..spiders import PttSpider
+from io import BufferedWriter
 from typing import Any, Dict, Tuple
 from scrapy.exporters import BaseItemExporter, CsvItemExporter
 
@@ -35,9 +36,32 @@ class CsvPipeline:
         return self.exporters_list[file_path][0]
 
     def process_item(self, item: Dict[str, Any], spider: PttSpider) -> Dict[str, Any]:
-        exporter = self._exporter_for_item(item, spider)
-        exporter.export_item(item)
-        return item
+        csv_item = get_items(
+            item,
+            [
+                "board",
+                "author",
+                "alias",
+                "title",
+                "date",
+                "ip",
+                "city",
+                "country",
+                "url",
+                "post_vote",
+            ],
+        )
+
+        post_vote = csv_item.pop("post_vote")
+        url = csv_item.pop("url")
+        csv_item["ups"] = post_vote["ups"]
+        csv_item["downs"] = post_vote["downs"]
+        csv_item["comments"] = post_vote["comments"]
+        csv_item["url"] = url
+
+        exporter = self._exporter_for_item(csv_item, spider)
+        exporter.export_item(csv_item)
+        return csv_item
 
     def close_spider(self, spider: PttSpider) -> None:
         for exporter, csv_file in self.exporters_list.values():

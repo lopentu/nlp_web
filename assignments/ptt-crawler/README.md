@@ -1,14 +1,8 @@
 # **批踢踢爬蟲 ptt-crawler**
 ### 學術研究用途，請勿不當使用。
 
-This project scrapes the post details from the website [PTT](https://term.ptt.cc/), and writes the scraped items to csv files.
 
-
-| author |  alias |title | date | ip | city | country  | ups | downs | comments | url |
-|----|----|----|----|----|----|----|----|----|----|----|
-| jason789780 | majiLove | \[請益\] google問題的精確與方向	 | 2022-09-06 10:39:42 | 223.137.68.113 | Yilan | Taiwan | 9	 | 0 | 29	 | https://www.ptt.cc/bbs/Soft_Job/M.1662431984.A.A3F.html |
-| ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
- 
+This project scrapes/crawls post content and comments from the website [PTT](https://term.ptt.cc/), and writes the scraped items to csv and json files. 
 
 
 ## **說明**
@@ -57,7 +51,7 @@ positional arguments:
 
 * Crawl all the posts of a board from a year in the past:
   ```bash
-  scrapy crawl ptt -a boards=Soft_Job -a since=2020
+  scrapy crawl ptt -a boards=Soft_Job -a since=2022
   ```
 
 * Crawl the posts of a board based on html indexes:
@@ -74,7 +68,50 @@ positional arguments:
 
   >Note: the comma in the argument `boards` cannot have spaces. It cannot be `boards=Soft_Job, Baseball` or  `boards=["Soft_Job", "Baseball"]`.
 
- 
+
+2. The scraped data will be saved as csv and json files, and has the following format:
+
+* csv
+
+  | author |  alias |title | date | ip | city | country  | ups | downs | comments | url |
+  |----|----|----|----|----|----|----|----|----|----|----|
+  | Tesarus | 提姆休斯 | \[問卷\] 居家工作者睡眠研究	 | 2022-09-27 17:38:10 | 122.116.101.218 | New Taipei | Taiwan | 0 | 0 | 2	 | https://www.ptt.cc/bbs/Soft_Job/M.1664271492.A.42E.html |
+  | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... | ... |
+
+
+* json
+  
+  ```json
+  {
+    "board": "Soft_Job",
+    "post_id": "M.1664271492.A.42E",
+    "author": "Tesarus",
+    "alias": "提姆休斯",
+    "title": "[問卷] 居家工作者睡眠研究",
+    "date": "2022-09-27 17:38:10",
+    "ip": "122.116.101.218",
+    "city": "New Taipei",
+    "country": "Taiwan",
+    "url": "https://www.ptt.cc/bbs/Soft_Job/M.1664271492.A.42E.html",
+    "body": "大家好，...",
+    "post_vote": { "ups": 0, "downs": 0, "comments": 2 },
+    "comments": [
+      {
+        "type": "comments",
+        "author": "keel90135",
+        "content": "看標題以為是抓上班偷睡覺",
+        "order": "1"
+      },
+      {
+        "type": "comments",
+        "author": "ainori520",
+        "content": "我有認識幾個居家無工作者",
+        "order": "2"
+      }
+    ]
+  }
+  ```
+
 
 ### 3. 使用 Docker
 A Docker setup is provided for the crawler.
