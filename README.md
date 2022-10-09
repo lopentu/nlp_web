@@ -6,9 +6,9 @@
 > Badges made from [here](https://shields.io/#your-badge)
 
 <div align="center">
-    <a href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week1.html" target="_blank" rel="noreferrer noopenner"><img alt="week1" src="https://img.shields.io/badge/slides-week1-ff0000" /></a> &emsp;&emsp;
-    <a href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week2.html" target="_blank" rel="noreferrer noopenner"><img alt="week2" src="https://img.shields.io/badge/slides-week2-ff8800" /></a> &emsp;&emsp;
-    <a href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week3.html" target="_blank" rel="noreferrer noopenner"><img alt="week3" src="https://img.shields.io/badge/slides-week3-ffff00" /></a> &emsp;&emsp;
-    <a href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week4.html" target="_blank" rel="noreferrer noopenner"><img alt="week4" src="https://img.shields.io/badge/slides-week4-88ff00" /></a> &emsp;&emsp;
-    <a href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week5.html" target="_blank" rel="noreferrer noopenner"><img alt="week5" src="https://img.shields.io/badge/slides-week5-00ff00" /></a>
+    <a target="_blank" rel="noopener noreferrer" href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week1.html"><img alt="week1" src="https://img.shields.io/badge/slides-week1-ff0000" /></a> &emsp;&emsp;
+    <a target="_blank" rel="noopener noreferrer" href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week2.html"><img alt="week2" src="https://img.shields.io/badge/slides-week2-ff8800" /></a> &emsp;&emsp;
+    <a target="_blank" rel="noopener noreferrer" href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week3.html"><img alt="week3" src="https://img.shields.io/badge/slides-week3-ffff00" /></a> &emsp;&emsp;
+    <a target="_blank" rel="noopener noreferrer" href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week4.html"><img alt="week4" src="https://img.shields.io/badge/slides-week4-88ff00" /></a> &emsp;&emsp;
+    <a target="_blank" rel="noopener noreferrer" href="https://htmlpreview.github.io/?https://github.com/lopentu/nlp_web/blob/main/slides/week5.html"><img alt="week5" src="https://img.shields.io/badge/slides-week5-00ff00" /></a>
 </div>
