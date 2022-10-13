@@ -1,0 +1,79 @@
+.main {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  background-color: #eeeeee;
+  /* flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: rgb(227, 236, 222);
+  /* border-radius: 20px; */
+  border: 2px dotted black;
+  border-radius: 30px; /* 邊角 */
+  padding: 50px;
+  /* box-shadow: 5px 5px #00180d; */
+  color: #1e4239fa;
+  font-size: 2em;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  display: block;
+  color: #12005e;
+  font-size: 1.3em;
+  padding: 1em;
+  font-weight: bold;
+}
+
+.logo-img {
+  width: 200px;
+  height: 50px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+#btn {
+  background-color: #1e4239fa;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  /* padding: 10px; */
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 1.2em;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  /* older tech to centering before flexbox */
+  /* margin-left: auto; */
+  /* margin-right: auto; */
+  /* display: block; */
+}
+
+#singOut {
+  background-color: #1e4239fa;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  /* padding: 10px; */
+  padding-top: 6px;
+  padding-bottom: 6px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 1.2em;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+}

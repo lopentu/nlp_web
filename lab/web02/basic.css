@@ -1,0 +1,55 @@
+body {
+  background: var(--background-image) no-repeat center center fixed;
+  padding-top: 15px;
+  color: var(--main-color);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.item {
+  margin: 0 0 10px;
+  position: relative;
+}
+
+h2 {
+  margin: 0;
+  font-size: 40px;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+  font-size: 50px;
+}
+
+html {
+  padding: 0 20px;
+}
+.img {
+  box-sizing: border-box;
+  width: 100% !important;
+  height: auto !important;
+  border: 5px solid var(--main-color);
+}
+
+.caption {
+  display: none;
+  color: white;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.caption a {
+  color: white;
+}
+
+.item:hover .caption {
+  display: block;
+}

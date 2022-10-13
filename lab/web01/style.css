@@ -1,0 +1,22 @@
+h1 {
+  color: rgb(2, 72, 2);
+}
+
+p {
+  background-color: #ffa;
+  color: navy;
+  font-size: 30px;
+  text-align: justify;
+}
+
+div.a {
+  width: 150px;
+  height: 80px;
+  background-color: yellow;
+  transform: rotate(40deg);
+  transform: rotate(20deg);
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+}
