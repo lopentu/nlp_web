@@ -1,0 +1,70 @@
+.title {
+  padding-top: 40px;
+  text-align: center;
+  font-size: xx-large;
+  font-family: cursive;
+  color: darkslateblue;
+  text-shadow: 2px 2px 4px #cbb4b4;
+}
+
+.content {
+  position: relative;
+  left: 25%;
+  width: 50%;
+}
+
+.card {
+  padding: 10px;
+  margin: 10px;
+  border: 3mm ridge rgb(50 98 220 / 60%);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.vocabulary {
+  display: flex;
+  align-items: center;
+}
+
+.word {
+  padding-right: 10px;
+}
+.definition {
+  margin-top: 0;
+}
+
+.example-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10p;
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: cornflowerblue;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 3px #999;
+}
+
+.button:hover {
+  background-color: cornflowerblue;
+}
+
+.button:active {
+  background-color: cornflowerblue;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+.icon-button {
+  border: 0;
+  padding: 0;
+  background: white;
+}
+
+.fa-star {
+  color: darkgray;
+  padding: 5px;
+}
