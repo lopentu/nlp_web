@@ -91,7 +91,8 @@ es6, es7 → es5
 
 ---
 # React
-[Why react?](https://medium.com/%E9%BA%A5%E5%85%8B%E7%9A%84%E5%8D%8A%E8%B7%AF%E5%87%BA%E5%AE%B6%E7%AD%86%E8%A8%98/%E7%AD%86%E8%A8%98-why-react-424f2abaf9a2)
+- [Why react?](https://medium.com/%E9%BA%A5%E5%85%8B%E7%9A%84%E5%8D%8A%E8%B7%AF%E5%87%BA%E5%AE%B6%E7%AD%86%E8%A8%98/%E7%AD%86%E8%A8%98-why-react-424f2abaf9a2)
+- [pokemon in vanilla JS](https://github.com/Nihaprezz/kanto-pokemon)
 
 ---
 # React, DOM element vs. React element vs. React components
