@@ -20,11 +20,11 @@ function App() {
   const [notification,setNotification] = useState(null);
   
   /**
-   *  較好的方式是只存 {id: id, count: count} ，不存多餘的資訊（e.g., price）
+   *  較好的方式是 cart 內只存 {id: id, count: count} ，不存多餘的資訊（e.g., price）
    *  因為 id 應該要是 unique，count 是使用者操作過後的值
    *  然後再回查資料來源： pokemons 列表 or pokemon data ，找到要呈現在 cart 裡對應的資訊
    *  但因為 pokemons 列表裡目前只有 name & url，
-   *  所以這裡就先取巧，直接在 handleAddToCart 理傳入 cart 呈現時需要的所有資料
+   *  所以這裡就先取巧，直接在 handleAddToCart 裡傳入 cart 呈現時需要的所有資料
    */
    const [cart, setCart] = useState([]);
 
@@ -46,7 +46,6 @@ function App() {
           ?  {...pokemon, count}
           : pokemon
       ));
-      console.log('updatedCart');
       setCart(updatedCart)
     }
   }
