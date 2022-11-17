@@ -1,8 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import Header from './components/Header';
 import PokemonCard from './components/PokemonCard/PokemonCard';
+import useFetch from "./hooks/useFetch";
 
 // https://pokeapi.co/
 const url = "https://pokeapi.co/api/v2/pokemon?limit=30";
@@ -16,22 +17,10 @@ const PokemonsWrapper = styled.div`
 
 function App() {
   const [notification,setNotification] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [pokemons, setPokemons] = useState(null);
-
-  useEffect(() => {
-    // https://javascript.info/fetch
-    fetch(url)
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        setPokemons(data.results);
-      })
-      .catch(error=> setError(error))
-      .finally(()=> setLoading(false))
-  }, [])
+  const {loading, error, data: pokemons} = useFetch({
+    url, 
+    resolvedPath: 'results'
+  });
 
   const handleAddToCart = ({pokemonName, count}) => {
     setNotification(()=> ({
