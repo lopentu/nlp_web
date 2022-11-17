@@ -32,11 +32,14 @@ npx create-react-app web03-1
   
 ---
 ### webpack
-- bundler
-- loaders, css-loader, style loader
+- bundler: 將你的 js, css 等檔案 Bundle 變成單一的檔案
+- loaders, css-loader, style loader 
+  - 在 JavaScript 檔案中 require 一個 css 檔案。你可以 require 其他不只是 JavaScript 的檔案
+  - 如果你 require 的檔案結尾是 .css，然會我們會使用 style 和 css loader，將 CSS 加入到 bundle
 - plugin , minify bundles
-- webpack-dev-server
-[read more](https://neighborhood999.github.io/webpack-tutorial-gitbook/Part1/)
+  - 你可以透過 `UglifyJsPlugin` plugin minify 你的 bundle 檔案來做改善
+- webpack 自帶了方便的 webpack-dev-server, 實際在瀏覽器看到我們的網站
+[ref](https://neighborhood999.github.io/webpack-tutorial-gitbook/Part1/)
 
 ---
 ### babel
@@ -44,7 +47,7 @@ es6, es7 → es5
 - `let` `const`
 - Arrow Functions 
   ```javascript
-  const x = (x, y) => x * y;`
+  const x = (x, y) => x * y;
   ```
 - Spread (...) Operator
   ``` javascript
@@ -68,10 +71,20 @@ es6, es7 → es5
 
 ---
 ### ```yarn add styled-components```
+- 看一下 `package.json`
+- 看一下 `node_modules`
 
 ---
 # 上工啦，今天來點寶可夢
-- 先看一下成品, web03
+- 先看一下成品
+  - 到 `nlp_web/lab/pokemons` 底下 
+    - `git pull origin pokemon_version3_cart` 
+    - `git checkout pokemon_version3_cart` 
+    - `yarn start`
+  
+---
+# 上工啦，今天來點寶可夢
+- features
   - 寶可夢卡片購買列表
     - 用 `fetch` 來抓 API data
   - 寶可夢卡片互動
@@ -85,9 +98,12 @@ es6, es7 → es5
 
 ---
 # 上工啦，今天來點寶可夢, different versions
-- version1: simple version
-- version2: add custom hook, `useFetch`
-- version3: add cart info 
+- version1: simple version ; `git pull origin main` 
+- version2: add custom hook `useFetch`; `git pull origin pokemon_version2_custom_hook` 
+- version3: add cart info; `git pull origin pokemon_version3_cart`
+
+Note: slides 到 `main` branch 看最新的
+Note: 切 branches demo 用，之後會把 brances 刪掉， `nlp_web/lab/pokemons` 只留 final version `pokemon_version3_cart`
 
 ---
 # React
@@ -99,17 +115,18 @@ es6, es7 → es5
 # DOM element
 DOM 將一份 HTML 文件看作是一個樹狀結構的物件，讓我們可以方便直觀的存取樹中的節點 (node) 來改變其結構、樣式 (CSS) 或內容等
 
-[image](https://summer10920.github.io/2020/04-20/js-baseclass-2/)
+[visite this](https://summer10920.github.io/2020/04-20/js-baseclass-2/)
 
 ---
 ## React element
-與瀏覽器的 DOM element 不同，React element 是單純的 object，而且很容易被建立。React DOM 負責更新 DOM 來符合 React element。
+- 與瀏覽器的 DOM element 不同，React element 是單純的 object，而且很容易被建立。React DOM 負責更新 DOM 來符合 React element。
+- An element describes what you want to see on the screen. 
 
 ```javascript
 const root = ReactDOM.createRoot(
   document.getElementById('root')
 );
-const element = <h1>Hello, world</h1>;
+const element = <h1>Hello, world</h1>; // react element
 root.render(element);
 ```
 
@@ -127,6 +144,11 @@ root.render(element);
 ---
 ## React component
 你也可以使用 ES6 Class 來定義 component, 上述兩種 component 在 React 中是同等的。
+```javascript
+function Welcome(props) {
+  return <h1>Hello, {props.name}</h1>;
+}
+```
 
 ```javascript
 class Welcome extends React.Component {
@@ -151,7 +173,8 @@ class Welcome extends React.Component {
 ---
 # React, render
 - 看一下 root `<div id="root" />`
-  
+*note: version1*
+
 ---
 # React, 切分 components
 Component 使你可以將 UI 拆分成獨立且可複用的程式碼，並且專注於各別程式碼的思考。
@@ -206,7 +229,7 @@ const element = (
 - 這也允許 React 顯示更有用的錯誤及警告訊息。
 - [React 並不要求使用 JSX](https://zh-hant.reactjs.org/docs/react-without-jsx.html)
 
-*note: version1*
+*note: version1, check sumPrices in JSX*
 
 ---
 # React, props vs. state
@@ -216,7 +239,6 @@ const element = (
   - whereas state is managed within the component (similar to variables declared within a function).
   
 [read more](https://github.com/uberVU/react-guide/blob/master/props-vs-state.md)
-- 我們建議從 component 的角度為 props 命名，而不是它的使用情境。
 
 *note: version1 props: handleAddToCart, pokemonUrl*
 
@@ -286,7 +308,7 @@ function Example() {
 
 ---
 ## 常用的 hook - `useEffect`
-side effect 在這裡做
+[side effect](https://ithelp.ithome.com.tw/articles/10185780) 在這裡做
 - 資料 fetch
 - 設定 subscription
 - 或手動改變 React component 中的 DOM 都是 side effect （或簡稱「effect」）
@@ -310,12 +332,17 @@ hook 讓你不需要改變 component 階層就能重用 stateful 的邏輯
 *note: version2*
 
 ---
-# callback `handleAddToCard` 
+# callback function `handleAddToCard` 
+*note: version3*
+
+---
+# cart
+*note: version3*
 
 ---
 # lib: styled-components 
 ### ```yarn add styled-components```
-- 為了要以「元件」為開發單位，需要限制 CSS 的作用範圍，以元件為 scope，換句話說就是，要讓每個元件的 CSS 都是獨立的，這樣就可以避免元件之間的 CSS 互相影響覆蓋。另外，可以讓元件容易維護，也更容易重複使用，
+- 為了要以「元件」為開發單位，需要限制 CSS 的作用範圍，以元件為 scope，換句話說就是，要讓每個元件的 CSS 都是獨立的，這樣就可以避免元件之間的 CSS 互相影響覆蓋。另外，可以讓元件容易維護，也更容易重複使用
   - 這段 CSS style 只會生效在這個元件內
   - 不用擔心改了會不會影響其他元件
   - 搬動元件時，不用額外搬動 CSS 檔
