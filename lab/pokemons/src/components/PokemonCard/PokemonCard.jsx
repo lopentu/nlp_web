@@ -1,6 +1,7 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styled from 'styled-components';
 
+import useFetch from "../../hooks/useFetch";
 import PokemonCardActions from './PokemonCardActions';
 import PokemonCardContent from './PokemonCardContent';
 
@@ -15,22 +16,8 @@ export default function PokemonCard({
   pokemonUrl,
   handleAddToCart
 }) {
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [pokemon, setPokemon] = useState(null);
+  const {loading, error, data: pokemon} = useFetch({url: pokemonUrl});
   const [count, setCount] = useState(0); 
-
-  useEffect(() => {
-    fetch(pokemonUrl)
-      .then(response => {
-        return response.json();
-      })
-      .then(data => {
-        setPokemon(data);
-      })
-      .catch(error=> setError(error))
-      .finally(()=> setLoading(false))
-  }, [pokemonUrl])
 
   const handleAdd = () => setCount(count + 1);
   const handleSubtract = () => {
