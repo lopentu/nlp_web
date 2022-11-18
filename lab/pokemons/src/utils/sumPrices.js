@@ -1,0 +1,1 @@
+export const sumPrices = ({obj, initialValue}) => obj.reduce((accumulator, curValue) => accumulator + curValue.price*curValue.count, initialValue);
