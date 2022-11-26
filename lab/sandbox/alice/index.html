@@ -1,31 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    #container {
+      margin: 2% auto;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
     #alice-text {
-      font-size: 12pt;      
-      width: 95%;            
+      font-size: 10pt;
+      line-height: 125%;
+      width: 45%;
+      height: 80vh;
+      overflow-y: scroll;
+      font-family:Arial, Helvetica, sans-serif;
+    }
+
+    #alice-hist {      
+      font-size: 12pt;
+      width: 45%;  
+      margin-left: 2%;    
+      margin-top: -5%;
+    }
+
+    .hist-elem {
+      overflow-x: hidden;
+      font-size: 12pt;
       white-space: pre;
       font-family: monospace;
+    }
+
+    .hist-elem:hover {
+      color: white;
+      background-color: navy;
+    }
+
+    .alice-highlight{
+      color: blue;
+      font-weight: bolder;
     }
   </style>
 </head>
 
 <body>
-  <div id="alice-text"></div>
-  <script type="module">    
-    function wordFreq(text){
-      let freq = {};      
-      let words = text.matchAll(/[a-zA-Z0-9]+/g);
-      for(let mat_x of words){
-        let w = mat_x[0]
-        w = w.toUpperCase();        
+  <div id="container">
+    <div id="alice-text"></div>
+    <div id="alice-hist"></div>
+  </div>
+  <script type="module">
 
-        if (w in freq){
+    function wordFreq(text) {
+      let freq = {};
+      let words = text.matchAll(/[a-zA-Z']{2,}|[a-zA-Z]/g);
+      for (let mat_x of words) {
+        let w = mat_x[0]
+        w = w.toUpperCase();
+
+        if (w in freq) {
           freq[w] += 1;
         } else {
           freq[w] = 1;
@@ -34,34 +72,57 @@
       return freq;
     }
 
-    function printFreq(freqDict){
+    function layoutFreq(freqDict) {
       let sortedArr = Array.from(Object.entries(freqDict))
-          .sort((a,b)=>b[1]-a[1]);
+        .sort((a, b) => b[1] - a[1]);
       const freqSum = sortedArr
-          .map((x)=>x[1])
-          .reduce((x,st)=>st += x, 0);
+        .map((x) => x[1])
+        .reduce((x, st) => st += x, 0);
 
       let hist = "";
-      for (let [ch_x, freq_x] of sortedArr.slice(0,20)){
-        const ratio = freq_x/freqSum*100;
-        hist += ch_x.padStart(8) + " ";
-        hist += `[${ratio.toFixed(2).padStart(5, " ")}] `;        
-        hist += "#".repeat(~~(ratio/0.1));        
-        hist += "\n";
+      for (let [ch_x, freq_x] of sortedArr.slice(0, 20)) {
+        const ratio = freq_x / freqSum * 100;
+        let textContent = "";
+        textContent = ch_x.padStart(5) + " ";
+        textContent += `[${ratio.toFixed(2).padStart(5, "0")}] `;
+        textContent += "#".repeat(~~(ratio / 0.1));
+        let hist_elem = `
+        <div class="hist-elem" onmouseenter="onEnterHistElem(this)" tag="${ch_x}">${textContent}</div>
+        `;
+        hist += hist_elem + "\n";
       }
       return hist;
     }
 
-    let elem = document.querySelector("#alice-text");
-    try{
-      let resp = await fetch("/lab/web02/alice.txt");      
-      let text = await resp.text();      
+
+    function onEnterHistElem(src){
+      let word = src.getAttribute("tag");
+      let alice_text = document.querySelector("#alice-text");
+      let raw_text = alice_text.getAttribute("rawText");
+
+      let pat = new RegExp(`\\b${word}\\b`, 'ig');
+      alice_text.innerHTML = raw_text.replace(pat, 
+           `<span class='alice-highlight'>${word}</span>`);
+
+    }
+
+    // attach to global
+    window.onEnterHistElem = onEnterHistElem;
+
+    let alice_text = document.querySelector("#alice-text");
+    let alice_hist = document.querySelector("#alice-hist");
+    try {
+      let resp = await fetch("/lab/web02/alice.txt");
+      let text = await resp.text();
       let freqDict = wordFreq(text);
-      let freqHist = printFreq(freqDict);
-      elem.textContent = freqHist;
-    } catch (err){
+      let freqHist = layoutFreq(freqDict);
+      alice_text.setAttribute("rawText", text);
+      alice_text.innerHTML = text;
+      alice_hist.innerHTML = freqHist;
+    } catch (err) {
       console.log(err);
     }      
   </script>
 </body>
+
 </html>
