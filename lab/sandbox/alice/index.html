@@ -20,13 +20,13 @@
       width: 45%;
       height: 80vh;
       overflow-y: scroll;
-      font-family:Arial, Helvetica, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    #alice-hist {      
+    #alice-hist {
       font-size: 12pt;
-      width: 45%;  
-      margin-left: 2%;    
+      width: 45%;
+      margin-left: 2%;
       margin-top: -5%;
     }
 
@@ -42,7 +42,7 @@
       background-color: navy;
     }
 
-    .alice-highlight{
+    .alice-highlight {
       color: blue;
       font-weight: bolder;
     }
@@ -54,7 +54,7 @@
     <div id="alice-text"></div>
     <div id="alice-hist"></div>
   </div>
-  <script type="module">
+  <script>
 
     function wordFreq(text) {
       let freq = {};
@@ -95,33 +95,33 @@
     }
 
 
-    function onEnterHistElem(src){
+    function onEnterHistElem(src) {
       let word = src.getAttribute("tag");
       let alice_text = document.querySelector("#alice-text");
       let raw_text = alice_text.getAttribute("rawText");
 
       let pat = new RegExp(`\\b${word}\\b`, 'ig');
-      alice_text.innerHTML = raw_text.replace(pat, 
-           `<span class='alice-highlight'>${word}</span>`);
+      alice_text.innerHTML = raw_text.replace(pat,
+        `<span class='alice-highlight'>${word}</span>`);
 
     }
 
     // attach to global
-    window.onEnterHistElem = onEnterHistElem;
+    // window.onEnterHistElem = onEnterHistElem;
 
     let alice_text = document.querySelector("#alice-text");
     let alice_hist = document.querySelector("#alice-hist");
-    try {
-      let resp = await fetch("/lab/web02/alice.txt");
-      let text = await resp.text();
-      let freqDict = wordFreq(text);
-      let freqHist = layoutFreq(freqDict);
-      alice_text.setAttribute("rawText", text);
-      alice_text.innerHTML = text;
-      alice_hist.innerHTML = freqHist;
-    } catch (err) {
-      console.log(err);
-    }      
+    let resp = fetch("/lab/web02/alice.txt")
+      .then((resp) => {
+        return resp.text();
+      })
+      .then((text) => {
+        let freqDict = wordFreq(text);
+        let freqHist = layoutFreq(freqDict);
+        alice_text.setAttribute("rawText", text);
+        alice_text.innerHTML = text;
+        alice_hist.innerHTML = freqHist;
+      });
   </script>
 </body>
 
