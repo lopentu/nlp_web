@@ -1,31 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
-import { useState, useEffect } from 'react';
+import {Routes, Route} from 'react-router-dom';
 import TextView from './text-view';
-import HistFreq from './hist-freq';
+
 
 function App() {
-  const [displayText, setDisplayText] = useState("");
-  const [target, setTarget] = useState("");
-  useEffect(() => {
-    fetch("alice.txt")
-      .then((resp) => {
-        return resp.text();
-      })
-      .then((text) => {
-        setDisplayText(text);
-      });
-  }, []);
 
-  function onTargetUpdate(target){
-    setTarget(target);
-  }
 
   return (
-    <div id="container">
-      <TextView rawText={displayText} target={target} />
-      <HistFreq rawText={displayText} onTargetUpdate={onTargetUpdate}/>
-    </div>
+    <Routes>
+      <Route index 
+        element={<TextView name="alice" freqType="word"/>} />
+      <Route path="/alice/word" 
+        element={<TextView name="alice" freqType="word"/>} />
+      <Route path="/alice/letter" 
+        element={<TextView name="alice" freqType="letter"/>} />
+      <Route path="/prince/word" 
+        element={<TextView name="prince" freqType="word"/>} />
+      <Route path="/prince/letter" 
+        element={<TextView name="prince" freqType="letter"/>} />
+    </Routes>
+    
   );
 }
 
