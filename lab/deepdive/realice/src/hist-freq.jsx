@@ -17,7 +17,7 @@ function letterFreq(text) {
 
 function wordFreq(text) {
   let freq = {};
-  let words = text.matchAll(/[a-zA-Z']{2,}|[a-zA-Z]/g);
+  let words = text.matchAll(/[a-zA-Z'\-]{2,}|[a-zA-Z]/g);
   for (let mat_x of words) {
     let w = mat_x[0]
     w = w.toUpperCase();

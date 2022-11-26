@@ -15,7 +15,6 @@ export default function TextView({ name, freqType }) {
       })
       .then((text) => {
         setRawText(text);
-        console.log(text);
       });
   }, [name]);
 
