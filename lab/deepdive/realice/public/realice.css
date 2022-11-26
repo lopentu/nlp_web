@@ -1,0 +1,39 @@
+#container {
+  margin: 2% auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#alice-text {
+  font-size: 10pt;
+  line-height: 125%;
+  width: 45%;
+  height: 80vh;
+  overflow-y: scroll;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#alice-hist {
+  font-size: 12pt;
+  width: 45%;
+  margin-left: 2%;
+  margin-top: -5%;
+}
+
+.hist-elem {
+  overflow-x: hidden;
+  font-size: 12pt;
+  white-space: pre;
+  font-family: monospace;
+}
+
+.hist-elem:hover {
+  color: white;
+  background-color: navy;
+}
+
+.alice-highlight {
+  color: blue;
+  font-weight: bolder;
+}
