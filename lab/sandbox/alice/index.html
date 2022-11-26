@@ -17,19 +17,18 @@
 
 <body>
   <div id="alice-text"></div>
-  <script type="module">
-    function letterFreq(text){
-      let freq = {};
-      for(let ch of text){
-        ch = ch.toUpperCase();
-        if (!ch.match(/[a-zA-Z]/)){
-          continue;
-        }
+  <script type="module">    
+    function wordFreq(text){
+      let freq = {};      
+      let words = text.matchAll(/[a-zA-Z0-9]+/g);
+      for(let mat_x of words){
+        let w = mat_x[0]
+        w = w.toUpperCase();        
 
-        if (ch in freq){
-          freq[ch] += 1;
+        if (w in freq){
+          freq[w] += 1;
         } else {
-          freq[ch] = 1;
+          freq[w] = 1;
         }
       }
       return freq;
@@ -45,9 +44,9 @@
       let hist = "";
       for (let [ch_x, freq_x] of sortedArr.slice(0,20)){
         const ratio = freq_x/freqSum*100;
-        hist += `[${ratio.toFixed(2).padStart(5, " ")}] `;
-        hist += ch_x + " ";        
-        hist += "#".repeat(~~ratio/0.5);        
+        hist += ch_x.padStart(8) + " ";
+        hist += `[${ratio.toFixed(2).padStart(5, " ")}] `;        
+        hist += "#".repeat(~~(ratio/0.1));        
         hist += "\n";
       }
       return hist;
@@ -57,7 +56,7 @@
     try{
       let resp = await fetch("/lab/web02/alice.txt");      
       let text = await resp.text();      
-      let freqDict = letterFreq(text);
+      let freqDict = wordFreq(text);
       let freqHist = printFreq(freqDict);
       elem.textContent = freqHist;
     } catch (err){
