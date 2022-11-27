@@ -11,8 +11,17 @@
 <body 
   style="width: 100vw; height: 100vh; 
     background-color: aliceblue;" 
-  onclick="this.style.backgroundColor='white';">  
-         
+  onclick="toggleBackground(this)">  
+  
+  <script>
+    let toggleBackground = (function () {
+      let flag = true;
+      return function (target) {
+        flag = !flag;
+        target.style.backgroundColor = flag ? 'aliceblue' : 'white'
+      }
+    })();    
+  </script>
 </body>
 
 </html>

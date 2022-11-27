@@ -5,36 +5,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Color Sync</title>
-  <style>
-    #see-wrap{
-      font-size: 24pt;
-      width: 40vw;
-      text-align: center;      
-      margin:auto;
-      padding-top: 5%;
-    }
-  </style>
+  <title>Color</title>
 </head>
 
 <body 
   style="width: 100vw; height: 100vh; 
     background-color: aliceblue;" 
   onclick="toggleBackground(this)">  
-  <div id="see-wrap">I see <span id="color-value">aliceblue</span></div>
-  <script>    
+  
+  <script>
     let toggleBackground = function(target){      
       let color = target.style.backgroundColor;
-      let colorValueElem = document.querySelector("#color-value");
       if(color=="white") {
         target.style.backgroundColor = "aliceblue";
-        colorValueElem.textContent = "aliceblue";
       } else {
         target.style.backgroundColor = "white";
-        colorValueElem.textContent = "white";
       }              
-    } 
+    }
   </script>
 </body>
 
 </html>
+
+
