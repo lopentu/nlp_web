@@ -8,7 +8,7 @@ export default function ColorToggle() {
 
   let toggleBackground = function (event) {
     let ncolor = CSS_COLOR_NAMES.length;
-    let color = CSS_COLOR_NAMES[Math.round(Math.random() * ncolor)];
+    let color = CSS_COLOR_NAMES[Math.floor(Math.random() * ncolor)];
     setColor(color);
   };
 
