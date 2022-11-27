@@ -1,0 +1,23 @@
+#container {
+  transition: background-color ease-out 0.2s; 
+}
+  
+#see-wrap {
+  font-size: 24pt;
+  width: 40vw;
+  text-align: center;
+  margin: auto;
+  padding: 3%;      
+  background-color: #FFFA;
+  border-radius: 10px;
+  box-shadow: 0 0 2px 2px #FFFA;
+}
+
+#color-input {
+  font-size: 20pt;
+  border: 2px solid lightgray;
+  border-radius: 10px; 
+  padding-left: 0.5em;     
+  width: 15vw;
+
+}
