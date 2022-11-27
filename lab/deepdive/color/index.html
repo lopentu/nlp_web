@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color</title>
+</head>
+
+<body style="background-color: aliceblue;" onclick="toggleBackground(this)">
+  Click me
+  <script>
+    let toggleBackground = (function () {
+      let flag = true;
+      return function (target) {
+        flag = !flag;
+        target.style.backgroundColor = flag ? 'aliceblue' : 'white'
+      }
+    })();    
+  </script>
+  <script>
+    for(var i=0; i<5; i++){
+      var func = function(x){
+        return ()=>console.log(x)
+      }
+      setTimeout(func(i), i*500)
+    }
+
+  </script>
+</body>
+
+</html>

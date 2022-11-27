@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Random</title>
+  <script type="text/javascript" src="css_colors.js"></script>
+  <style>
+    body {
+      transition: background-color ease-out 0.2s; 
+    }
+    
+    #container {      
+      display: flex;
+      height: 80vh;      
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #container div {
+      width: 40vw;
+      height: 10vh;
+      text-align: center;
+      font-size: 24pt;
+    }
+
+    #color-input {
+      font-size: 18pt;
+      border: 2px solid lightgray;
+      border-radius: 10px;
+      padding-left: 0.5em;
+      width: 20vw;
+
+    }
+  </style>
+</head>
+
+<body style="background-color: aliceblue;">
+  <div id="container">
+    <div style="cursor:pointer" onclick="toggleBackground(this)">Click me</div>
+    <div style="display:flex;
+      align-items: center;
+      justify-content: center;;
+      background-color: #FFFA;
+      box-shadow: 0 0 2px 2px #FFFA;">
+      I see &nbsp;
+      <input type="text" id="color-input" value="aliceblue" onchange="onColorInputChange(this)" />
+    </div>
+  </div>
+  <script>
+    let toggleBackground = function (target) {
+      let ncolor = CSS_COLOR_NAMES.length;
+      let color = CSS_COLOR_NAMES[Math.round(Math.random() * ncolor)];
+      setColor(color);
+    };
+
+    let onColorInputChange = function (target) {
+      let newColor = target.value;
+      setColor(newColor);
+      console.log(newColor)
+    }
+
+    let setColor = function (color) {
+      document.querySelector("body").style.backgroundColor = color;
+      document.querySelector("#color-input").value = color;
+    }
+  </script>
+</body>
+
+</html>

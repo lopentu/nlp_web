@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Sync</title>
+  <style>
+    #container {      
+      display: flex;      
+      height: 80vh;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    #container div {
+      width: 20vw;
+      height: 20vh;
+      text-align: center;
+      vertical-align: center;
+      font-size: 24pt;
+    }
+  </style>
+</head>
+
+<body style="background-color: aliceblue;" onclick="toggleBackground(this)">
+  <div id="container">
+    <div>Click me</div>
+    <div>I see <span id="color-value">aliceblue</span></div>
+  </div>
+  <script>
+    let toggleBackground = (function () {
+      let flag = true;
+      return function (target) {
+        flag = !flag;
+        let color = flag ? 'aliceblue' : 'white';
+        target.style.backgroundColor = color;
+        document.querySelector("#color-value").textContent = color;
+      }
+    })();    
+  </script>
+</body>
+
+</html>
