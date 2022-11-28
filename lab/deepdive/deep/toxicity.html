@@ -31,8 +31,7 @@
     <div id="input-wrap" class="row">
       <div class="col text-center fs-3 mx-auto">
         <input type="text" class="w-50 rounded border-light"
-          placeholder="Sentence here"
-          value="this sucks"
+          placeholder="input something"          
           onChange="detect_toxicity(this.value)"/>
       </div>
     </div>    
@@ -44,18 +43,15 @@
       </div>
       <div id="response-wrap" class="col fs-2 text-center mx-auto mt-5">        
         <span id="pred-label"></span>
-        <span id="pred-prob"></span>
       </div>
     </div>
   </div>
   <script>
     // Code adapted from: https://github.com/tensorflow/tfjs-models/tree/master/toxicity
 
-    // The minimum prediction confidence.
     let tox_model = {};
 
-    // Load the model. Users optionally pass in a threshold and an array of
-    // labels to include.
+    // Load the model. 
     function load_model() {
       toxicity
         .load()
@@ -73,19 +69,17 @@
         // If neither prediction exceeds the threshold, `match` is `null`.
         console.log(predictions);
         
-        const maxPred = predictions
-          .sort((a, b) => {
-            const getProb = (x) => {
-              return x.results[0].probabilities[1];
-            }
-            return getProb(b) - getProb(a);
-          });
-        console.log(maxPred[0].label);
+        let matchedPreds = predictions.filter(x=>x.results[0].match);      
+        
+        let results = "";
+        for(let pred_x of matchedPreds){
+          let prob = Math.round(pred_x.results[0].probabilities[1]*100);
+          results += pred_x.label + `(${prob}%) <br>`;
+        }
+        
         document.querySelector("#response-spinner").classList.toggle("visually-hidden");
         document.querySelector("#response-wrap").classList.toggle("visually-hidden");
-        document.querySelector("#pred-label").textContent = maxPred[0].label;
-        const prob = maxPred[0].results[0].probabilities[1];
-        document.querySelector("#pred-prob").textContent = Math.round(prob*100) + "%"
+        document.querySelector("#pred-label").innerHTML = results        
 
       })
     }
