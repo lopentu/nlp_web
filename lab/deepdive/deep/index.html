@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>    
+  <button onclick="alert('hello')">Click me</button>
+  <input onchange="alert(this.value)"/>
+  <button onclick="snap()">color</button>
+  <script>
+    function snap(){
+      setTimeout(()=>{
+      document.querySelector("body").style.backgroundColor="bisque";
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
