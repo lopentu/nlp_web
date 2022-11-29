@@ -12,6 +12,19 @@ export default function ChatBox() {
         reply: "Reply Message - 2"
       }
     ]);
+  
+  function onInputHandler(event){    
+    if (event.key==="Enter"){
+      console.log(event.target.value);
+      let new_dialogue = Array.from(dialogue);
+      new_dialogue.push({
+        prompt: event.target.value.trim(),
+        reply: ""
+      });
+      event.target.value = "";
+      setDialogue(new_dialogue);
+    }    
+  }
 
   return (
     <div className="w-50 mx-auto mt-5 fs-4">
@@ -24,7 +37,10 @@ export default function ChatBox() {
       <div>
         <div className="w-100 mb-5 position-fixed bottom-0 start-0">
           <div className="w-50 mx-auto mt-5 fs-4">
-            <input type="text" class="form-control form-control-lg" placeholder="Type here" />
+            <input type="text" 
+              className="form-control form-control-lg" 
+              placeholder="Type here" 
+              onKeyDown={onInputHandler}/>
           </div>
         </div>
       </div>
