@@ -5,11 +5,11 @@ export default function ChatTurn({
 }) {
   return (
     <div className="d-flex flex-column">
-      <div className="align-self-end bg-light rounded-pill p-3">
+      <div className="align-self-end bg-light rounded-pill py-2 px-3 mt-2">
         {prompt}
       </div>
       
-        <div className="align-self-start bg-light rounded-pill p-3">
+        <div className="align-self-start bg-light rounded-pill py-2 px-3 mt-2">
           {reply ? reply: (<Spinner/>)}
         </div>        
     </div>

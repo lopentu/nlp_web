@@ -1,15 +1,13 @@
 import { useState } from 'react';
+import { process_api, debug_api } from './api';
 import ChatTurn from "./chat-turn"
 
 export default function ChatBox() {
   const [dialogue, setDialogue] = useState(
     [
       {
-        prompt: "Prompt Message - 1",
-        reply: "Reply Message - 1"
-      }, {
-        prompt: "Prompt Message - 2",
-        reply: "Reply Message - 2"
+        prompt: "你好阿",
+        reply: "所有訊息都會由bigscience/bloomz回覆！"
       }
     ]);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -30,17 +28,24 @@ export default function ChatBox() {
 
   function process_prompt(intext, dialogue_data) {
     setIsProcessing(true);
-    setTimeout(() => {
+    const process_handler = process_api;
+    // const process_handler = debug_api;
+    process_handler(intext).then((reply)=>{
       let new_dialogue = Array.from(dialogue_data);
       let last_turn = new_dialogue[new_dialogue.length - 1];
-      last_turn.reply = "hello there!"
+      console.log("bloomz respond: ", reply);
+      if (reply){
+        last_turn.reply = reply;
+      } else {
+        last_turn.reply = "我不知道🤷‍♂️";
+      }
       setIsProcessing(false);
       setDialogue(new_dialogue);
-    }, 100)
+    });
   }
   return (
     <div className="d-flex flex-column w-50 vh-100 mx-auto mt-1 fs-4 ">
-      <div className="flex-grow-1 overflow-auto">
+      <div className="flex-grow-1 overflow-auto px-3">
         {dialogue.map((dialogue_x, idx) => {
           return (
             <ChatTurn key={`dialogue_${idx}`}
@@ -50,7 +55,9 @@ export default function ChatBox() {
       </div>
       <div className="w-100 mb-5">
         <div className="mx-auto mt-1 fs-4">
-          <input type="text" disabled={isProcessing}
+          <input type="text" 
+            autoFocus
+            disabled={isProcessing}
             className="form-control form-control-lg"
             placeholder="Type here"
             onKeyDown={onInputHandler} />
