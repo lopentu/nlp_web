@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+import ChatBox from "./chatbox";
 import './App.css';
 
 function App() {
   return (
-    <div>Wander Wrapper</div>
+    <ChatBox/>
   );
 }
 
