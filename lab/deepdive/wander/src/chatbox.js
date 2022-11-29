@@ -20,7 +20,7 @@ export default function ChatBox() {
         prompt: prompt_text,
         reply: ""
       });
-      event.target.value = "";
+      event.target.value = "";      
       process_prompt(prompt_text, new_dialogue);
       setDialogue(new_dialogue);
     }
@@ -30,11 +30,11 @@ export default function ChatBox() {
     setIsProcessing(true);
     const process_handler = process_api;
     // const process_handler = debug_api;
-    process_handler(intext).then((reply)=>{
+    process_handler(intext).then((reply) => {
       let new_dialogue = Array.from(dialogue_data);
       let last_turn = new_dialogue[new_dialogue.length - 1];
       console.log("bloomz respond: ", reply);
-      if (reply){
+      if (reply) {
         last_turn.reply = reply;
       } else {
         last_turn.reply = "我不知道🤷‍♂️";
@@ -45,17 +45,19 @@ export default function ChatBox() {
   }
   return (
     <div className="d-flex flex-column w-50 vh-100 mx-auto mt-1 fs-4 ">
-      <div className="flex-grow-1 overflow-auto px-3">
-        {dialogue.map((dialogue_x, idx) => {
-          return (
-            <ChatTurn key={`dialogue_${idx}`}
-              prompt={dialogue_x.prompt}
-              reply={dialogue_x.reply} />)
-        })}
+      <div className="flex-grow-1 d-flex flex-column-reverse overflow-auto">
+        <div className="px-3">
+          {dialogue.map((dialogue_x, idx) => {
+            return (
+              <ChatTurn key={`dialogue_${idx}`}
+                prompt={dialogue_x.prompt}
+                reply={dialogue_x.reply} />)
+          })}
+        </div>
       </div>
-      <div className="w-100 mb-5">
+      <div className="w-100 my-2">
         <div className="mx-auto mt-1 fs-4">
-          <input type="text" 
+          <input type="text"            
             autoFocus
             disabled={isProcessing}
             className="form-control form-control-lg"
