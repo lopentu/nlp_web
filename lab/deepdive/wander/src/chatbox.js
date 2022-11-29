@@ -7,7 +7,7 @@ export default function ChatBox() {
     [
       {
         prompt: "你好阿",
-        reply: "所有訊息都會由bigscience/bloomz回覆！"
+        reply: "🤖bigscience/bloomz🌸"
       }
     ]);
   const [isProcessing, setIsProcessing] = useState(false);
