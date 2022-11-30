@@ -7,16 +7,20 @@
 <body>    
   <button onclick="alert('hello')">Click me</button>
   <input onchange="alert(this.value)"/>    
+  <button 
+   onclick="document.body.style.backgroundColor='bisque'">
+   bisque</button>
   <button onclick="snap()" id="btn">color</button>    
   <script>
     function snap(){      
+      document.body.style.backgroundColor='MistyRose';
       console.log("snap called - enter");
       setTimeout(()=>{
         console.log("setTimeout callback - enter");
         document.body.style.backgroundColor="bisque";
         document.querySelector("#btn").textContent = "snapped";
         console.log("setTimeout callback - exit");
-      }, 500);
+      }, 1000);
       console.log("snap called - exit");
     }
   </script>
