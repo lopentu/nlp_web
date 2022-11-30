@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.269">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>week13</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="week13_files/libs/clipboard/clipboard.min.js"></script>
+<script src="week13_files/libs/quarto-html/quarto.js"></script>
+<script src="week13_files/libs/quarto-html/popper.min.js"></script>
+<script src="week13_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="week13_files/libs/quarto-html/anchor.min.js"></script>
+<link href="week13_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="week13_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="week13_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="week13_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="week13_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<style>
+  header { 
+    position: absolute; 
+    left: 1000px;
+  }
+</style>
+<style>
+blockquote {
+    border-top: 0.1em dashed #555;
+    font-size: 60%;
+    margin-top: auto;
+}
+</style>
+<section id="week-13" class="level2">
+<h2 class="anchored" data-anchor-id="week-13">Week 13</h2>
+</section>
+<section id="machine-learningnlp-in-javascript-with-tensorflow.js" class="level1">
+<h1>Machine learning/NLP in Javascript with TensorFlow.js</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.gstatic.com/devrel-devsite/prod/ve6e6ebff6d326e85aedeebfd3fad7cfd85d0fc48cfc2ee55b5498d178a34d928/tensorflow/images/lockup.svg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">bg right width:500</figcaption><p></p>
+</figure>
+</div>
+<section id="謝舒凱-台大語言所" class="level2">
+<h2 class="anchored" data-anchor-id="謝舒凱-台大語言所">謝舒凱 台大語言所</h2>
+<hr>
+</section>
+</section>
+<section id="nlp-ml-and-web-applications" class="level1">
+<h1>NLP, ML and Web Applications</h1>
+<hr>
+</section>
+<section id="回到課程的核心動機" class="level1">
+<h1>回到課程的核心動機</h1>
+<p>web applications with NLP: why and how</p>
+<hr>
+</section>
+<section id="nlp-ai-and-web-applications" class="level1">
+<h1>NLP, AI and Web Applications</h1>
+<ul>
+<li>語音辨識</li>
+<li>自然語言處理</li>
+<li>視覺辨識</li>
+<li>搜尋</li>
+<li>遊戲</li>
+<li>聊天機器人</li>
+<li>規劃排程</li>
+</ul>
+<hr>
+</section>
+<section id="機器學習與深度學習" class="level1">
+<h1>機器學習與深度學習</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lavender.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">bg</figcaption><p></p>
+</figure>
+</div>
+<hr>
+</section>
+<section id="基本概念" class="level1">
+<h1>基本概念</h1>
+<ul>
+<li><p>機器學習 (Machine Learning, ML) performs tasks based on data rather than explicit (coded) rules.</p></li>
+<li><p>深度學習 (Deep Learning, DL) is a subset of ML that uses neural networks to learn from data.</p></li>
+<li><p>典型的 ML 任務包括分類 (classification)、回歸 (regression)、聚類 (clustering)、降維 (dimensionality reduction)、推薦系統 (recommendation system) 等。</p></li>
+</ul>
+<hr>
+</section>
+<section id="機器學習的類型日新月異" class="level1">
+<h1>機器學習的類型日新月異</h1>
+<ul>
+<li><p>supervised learning</p></li>
+<li><p>unsupervised learning</p></li>
+<li><p>reinforcement learning</p></li>
+<li><p>semi-supervised learning</p></li>
+<li><p>active learning</p></li>
+<li><p>transfer learning</p></li>
+<li><p>multi-task learning</p></li>
+<li><p>self-supervised learning</p></li>
+</ul>
+<hr>
+</section>
+<section id="traing-and-testing-data" class="level1">
+<h1>Traing and testing data</h1>
+<!-- 圖示 video3: 5:18-->
+<hr>
+</section>
+<section id="過度擬合-overfitting" class="level1">
+<h1>過度擬合 (overfitting)</h1>
+<ul>
+<li>train the model which works well for the training data but not for the (unseen) testing data.</li>
+</ul>
+<hr>
+</section>
+<section id="loss-function" class="level1">
+<h1>Loss function</h1>
+<!-- 3:7:34 -->
+<ul>
+<li>a function that measures how well the model performs on the training data.</li>
+</ul>
+<hr>
+</section>
+<section id="深度學習" class="level1">
+<h1>深度學習</h1>
+<ul>
+<li><p>深度學習是一種機器學習方法，它使用<strong>多層</strong>神經網路來模擬人類大腦的神經網路，並且使用大量的資料來訓練模型。</p>
+<ul>
+<li>feed in input and produce output.</li>
+<li>can be trained via <code>backpropagation</code> to improve the model.</li>
+</ul></li>
+<li><p>Configutation matters!</p></li>
+</ul>
+<hr>
+<section id="lab" class="level2">
+<h2 class="anchored" data-anchor-id="lab">Lab:</h2>
+<p><a href="https://playground.tensorflow.org/">Tensorflow playgound</a></p>
+<hr>
+</section>
+</section>
+<section id="transformer" class="level1">
+<h1>Transformer</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="lavender.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">bg</figcaption><p></p>
+</figure>
+</div>
+<hr>
+</section>
+<section id="section" class="level1">
+<h1></h1>
+<ul>
+<li><p>[Tensorflow] Google 開發的開源機器學習框架 (2015-)</p></li>
+<li><p>[PyTorch] Facebook 開發的開源機器學習框架 (2016-)</p></li>
+</ul>
+<hr>
+</section>
+<section id="讓前端也可以做機器學習" class="level1">
+<h1>讓前端也可以做機器學習</h1>
+<ul>
+<li><p><a href="">Tensorflow.js</a> (since 2018): Machine Learning library for JavaScript, which makes ML in the browser possible.[*]</p></li>
+<li><p>可以充分利用 device features (e.g., camera, microphone, etc.); take advantage of user interaction; utilize the power of the device; help protect the user’s privacy.</p></li>
+<li><p>讓 JS 前端工程師可直接使用 ML 模型 (也可以 import Python 模型)</p></li>
+</ul>
+<blockquote class="blockquote">
+<p>[*] can also use it with <code>node.js</code> for server side or backend development.</p>
+</blockquote>
+<hr>
+</section>
+<section id="效能考量" class="level1">
+<h1>效能考量</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Unofficial_JavaScript_logo_2.svg/480px-Unofficial_JavaScript_logo_2.svg.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">bg right width:500</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p><code>Tensorflow.js</code> 是在瀏覽器中執行的，所以效能會受到瀏覽器限制。但現在的瀏覽器已經足夠強大，可以執行複雜的模型。(<strong>uses GPU in web browser</strong>)</p></li>
+<li><p>Frontend (browser) or backend (node.js) development</p></li>
+</ul>
+<p><!-- for js developer --></p>
+<hr>
+</section>
+<section id="不只有-tf.js-一家" class="level1">
+<h1>不只有 TF.js 一家</h1>
+<ul>
+<li><a href="https://ml5js.org/">ml5.js</a>: 開源友善的架在 <code>TensorFlow.js</code> 之上。,</li>
+</ul>
+<!-- 舉例：https://julienrioux.medium.com/in-browser-ml-with-react-js-and-ml5-js-f3eeb5149404 -->
+<hr>
+<section id="tensorflow.js-是什麼" class="level2">
+<h2 class="anchored" data-anchor-id="tensorflow.js-是什麼">Tensorflow.js 是什麼</h2>
+<p>TensorFlow makes it easy for beginners and experts to create machine learning models for desktop, mobile, web, and cloud.</p>
+<ul>
+<li><p><code>Tensor</code> + <code>Flow</code></p></li>
+<li><p><code>TensorFlow.js</code>也支援 WebGL，因此即使在瀏覽器上，我們也能使用 GPU 來加快運算結果，不用擔心在瀏覽器上的效能限制。</p></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="安裝與執行" class="level1">
+<h1>安裝與執行</h1>
+<p>Install <code>tensorflow.js</code> in the <strong>browser</strong> and/or for <strong>node.js</strong> * 兩種方式</p>
+<ul>
+<li><p>using the script tag</p></li>
+<li><p>installation from NPM and using a build tool like Parcel, WebPack, or Rollup.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">npm</span> install @tensorflow/tfjs</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="co"># or</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="ex">yarn</span> add @tensorflow/tfjs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>如此可在本地端執行。</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> <span class="op">*</span> <span class="im">as</span> tf <span class="im">from</span> <span class="st">"@tensorflow/tfjs"</span><span class="op">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<blockquote class="blockquote">
+<ul>
+<li>optimizations in each environment are different.</li>
+</ul>
+</blockquote>
+<hr>
+</section>
+<section id="我們先用-script-tag-的方式" class="level1">
+<h1>我們先用 script tag 的方式</h1>
+<ul>
+<li>Create a simple HTML file, ddd this script tag to the HTML file: (check <a href="https://www.tensorflow.org/js/tutorials/setup#installation_from_npm">the latest</a>)</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span> <span class="er">src</span><span class="ot">=</span><span class="st">"https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"</span><span class="kw">&gt;&lt;/script&gt;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>Open the web console.
+<ul>
+<li>Run <code>tf.version</code> in the console to verify TensorFlow is setup and see which version is running.</li>
+</ul></li>
+</ul>
+<hr>
+<section id="測試一下" class="level2">
+<h2 class="anchored" data-anchor-id="測試一下">測試一下</h2>
+<ul>
+<li><p>複製該網站上的 code sampe for script tag setup 程式碼到 HTML 檔案中，並且開啟瀏覽器的 console。</p></li>
+<li><p>應該會得到類似以下結果：</p></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html code-with-copy"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>Tensor [[6.9452119],]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+</section>
+</section>
+<section id="webgl-optimizations" class="level1">
+<h1>WebGL optimizations</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsMlDZI7NR4vOkMzmZz-69rC3GIVW_LxxRlDASPk4n8c9nGUvfJGik6RqUEcOnWqrmGto&amp;usqp=CAU.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">bg right width:500</figcaption><p></p>
+</figure>
+</div>
+<ul>
+<li><p>WebGL is a JavaScript API for rendering interactive 3D and 2D graphics within any compatible web browser without the use of plug-ins. check <a href="https://get.webgl.org/">this website</a></p></li>
+<li><p>used by <code>Tensorflow.js</code> to run on GPU (not used for visial graphics)</p></li>
+</ul>
+<!-- Graphic cars (GPU) is faster than CPU for matrix operations -->
+<!-- tf.getbackend() -->
+<hr>
+</section>
+<section id="核心概念" class="level1">
+<h1>核心概念</h1>
+<p>張量、運算子、模型、層，以及訓練、記憶體管理方法，以及如何寫出簡潔（tidy）的程式碼。</p>
+<hr>
+</section>
+<section id="tensorflow-api" class="level1">
+<h1>TensorFlow API</h1>
+<p>兩個一開始好用的部分</p>
+<ul>
+<li><p>low-level operation API</p>
+<ul>
+<li>math operations to manipulate data</li>
+<li>not easy</li>
+<li>(similar to Eager Execution in TensorFlow Python API)</li>
+</ul></li>
+<li><p>high-level layers API</p>
+<ul>
+<li>allows you to define complex model easily</li>
+<li>(similar to Keras in TensorFlow Python API)</li>
+</ul></li>
+</ul>
+<p><a href="https://js.tensorflow.org/api/latest/">擅用 tensorflow.js api docs</a></p>
+<hr>
+</section>
+<section id="張量-tensor" class="level1">
+<h1>張量 ｜ Tensor</h1>
+<hr>
+</section>
+<section id="operations" class="level1">
+<h1>operations</h1>
+<hr>
+</section>
+<section id="如何利用-tf.js-完成一個機器學習專案" class="level1">
+<h1>如何利用 TF.js 完成一個機器學習專案</h1>
+<ul>
+<li>備料</li>
+<li>探勘</li>
+<li>定義模型</li>
+<li>訓練與測試</li>
+<li>預測</li>
+</ul>
+<hr>
+</section>
+<section id="線性迴歸-linear-regression" class="level1">
+<h1>線性迴歸 linear regression</h1>
+<ul>
+<li>import data [*]</li>
+<li>visualize data (via <code>tfjs-vis</code>)</li>
+<li>feature selection and labels; normalized the data into a form that is appropriate for the TensorFlow.js layers API.</li>
+<li>splitting data into training and testing sets</li>
+</ul>
+<blockquote class="blockquote">
+<p>[*] <a href="www.kaggle.com">kaggle</a> 是個好地方</p>
+</blockquote>
+<hr>
+</section>
+<section id="penguins" class="level1">
+<h1>Penguins</h1>
+<hr>
+</section>
+<section id="nlp-應用實例" class="level1">
+<h1>NLP 應用實例</h1>
+<p>How to use tensorflow.js in react.js — Sentimental Analysis</p>
+<hr>
+</section>
+<section id="期末報告bg" class="level1">
+<h1>期末報告<img src="lavender.png" class="img-fluid" alt="bg"></h1>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
