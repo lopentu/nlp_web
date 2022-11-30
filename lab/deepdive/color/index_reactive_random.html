@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Reactive</title>
+  <script type="text/javascript" src="css_colors.js"></script>
+  <style>
+    body {
+      transition: background-color ease-out 0.2s; 
+    }
+      
+    #see-wrap {
+      font-size: 24pt;
+      width: 40vw;
+      text-align: center;
+      margin: auto;
+      padding: 3%;      
+      background-color: #FFFA;
+      border-radius: 10px;
+      box-shadow: 0 0 2px 2px #FFFA;
+    }
+
+    #color-input {
+      font-size: 20pt;
+      border: 2px solid lightgray;
+      border-radius: 10px; 
+      padding-left: 0.5em;     
+      width: 15vw;
+
+    }
+  </style>
+</head>
+
+<body style="width: 100vw; height: 100vh; 
+    background-color: aliceblue;" onclick="toggleBackground(this)">
+  <div id="see-wrap">I see
+    <input type="text" id="color-input" value="aliceblue" onchange="onColorInputChange(this)" />
+  </div>  
+  <script>
+    let toggleBackground = function (target) {
+      let ncolor = CSS_COLOR_NAMES.length;
+      let color = CSS_COLOR_NAMES[Math.floor(Math.random() * ncolor)];
+      setColor(color);
+    };
+
+    let onColorInputChange = function (target) {
+      let newColor = target.value;
+      setColor(newColor);
+    }
+
+    let setColor = function (color) {
+      document.querySelector("body").style.backgroundColor = color;
+      document.querySelector("#color-input").value = color;
+    }
+  </script>
+</body>
+
+</html>

@@ -102,8 +102,8 @@ es6, es7 → es5
 - version2: add custom hook `useFetch`; `git pull origin pokemon_version2_custom_hook` 
 - version3: add cart info; `git pull origin pokemon_version3_cart`
 
-Note: slides 到 `main` branch 看最新的
-Note: 切 branches demo 用，之後會把 brances 刪掉， `nlp_web/lab/pokemons` 只留 final version `pokemon_version3_cart`
+*Note: slides 到 `main` branch 看最新的*
+*Note: 切 branches demo 用，之後會把 brances 刪掉， `nlp_web/lab/pokemons` 只留 final version `pokemon_version3_cart`*
 
 ---
 # React
@@ -185,6 +185,12 @@ Component 使你可以將 UI 拆分成獨立且可複用的程式碼，並且專
 *note: version1*
 
 ---
+![fit](./images/pokemon_page_marked.png)
+
+---
+![fit](./images/pokemon_card_marked.png)
+
+---
 # React, JSX
 ## 什麼是 JSX
 - 是一個 JavaScript 的語法擴充。透過這個語法來描述使用者介面的外觀
@@ -229,7 +235,12 @@ const element = (
 - 這也允許 React 顯示更有用的錯誤及警告訊息。
 - [React 並不要求使用 JSX](https://zh-hant.reactjs.org/docs/react-without-jsx.html)
 
-*note: version1, check sumPrices in JSX*
+
+---
+# 來看下程式碼
+- 看下 components 如何拆分
+- 看下 `sumPrices` in JSX
+*note: version3*
 
 ---
 # React, props vs. state
@@ -254,6 +265,7 @@ const element = (
   - hook 讓你把一個 component 拆分成更小的 function，這基於什麼部分是相關的（像是設置一個 subscription 或是抓取資料，而不是強制基於 lifecycle 方法來分拆。
 
 [ref](https://zh-hant.reactjs.org/docs/hooks-intro.html)
+[document.title, subscription](https://zh-hant.reactjs.org/docs/hooks-effect.html)
 
 ---
 # React, hook
@@ -304,7 +316,7 @@ function Example() {
 }
 ```
 
-*note: version1*
+*note: version1, state: loading, error, pokemons, count*
 
 ---
 ## 常用的 hook - `useEffect`
@@ -320,6 +332,13 @@ useEffect 有什麼作用？ 透過使用這個 Hook，你告訴 React 你的 co
 ---
 # 常用的 hook - `useEffect`
 每次 render 後都會執行 useEffect 嗎？ 是的！預設情況下，它在第一個 render 和隨後每一個更新之後執行。你可能會發現把 effect 想成發生在「render 之後」更為容易
+
+---
+# 來看下程式碼
+- 看下打 API 的地方 (fetch)
+- 再仔細看下互動的地方
+
+*note: version1*
 
 ---
 # React, customize your hook
@@ -353,5 +372,8 @@ hook 讓你不需要改變 component 階層就能重用 stateful 的邏輯
   - 在 JavaScript 裡面寫 CSS
   - 在 JavaScript 裡面寫的 CSS 裡面寫 JavaScript
 [ref](https://styled-components.com/docs/basics#installation)
+
+---
+# 可用 CRA 實作看看 😃
 
 ---
