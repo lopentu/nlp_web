@@ -20,9 +20,11 @@ blockquote {
 }
 </style>
 
-## Week 13
+<!-- _backgroundColor: lightgreen -->
 
-# Machine learning/NLP in Javascript with TensorFlow.js
+# Week 13
+
+## Machine learning/NLP in Javascript (with TensorFlow.js)
 
 ![bg right width:500](https://www.gstatic.com/devrel-devsite/prod/ve6e6ebff6d326e85aedeebfd3fad7cfd85d0fc48cfc2ee55b5498d178a34d928/tensorflow/images/lockup.svg)
 
@@ -36,7 +38,7 @@ blockquote {
 
 # 回到課程的核心動機
 
-web applications with NLP: why and how
+Web applications with NLP: making the web smarter (`NLP-aware`)
 
 ---
 
@@ -55,6 +57,8 @@ web applications with NLP: why and how
 # 機器學習與深度學習
 
 ![bg](lavender)
+
+
 
 ---
 
@@ -88,6 +92,11 @@ web applications with NLP: why and how
 
 ---
 
+- 我們在這門課的重點不是學習**開發**機器學習，而是如何在網頁設計上**使用與部署**機器學習模型。
+
+
+---
+
 # Traing and testing data
 
 <!-- 圖示 video3: 5:18-->
@@ -110,7 +119,7 @@ web applications with NLP: why and how
 
 # 深度學習
 
-- 深度學習是一種機器學習方法，它使用**多層**神經網路來模擬人類大腦的神經網路，並且使用大量的資料來訓練模型。
+- 深度學習是一種晚近的機器學習方法，它使用**多層**神經網路來模擬人類大腦的神經網路，並且使用大量的資料來訓練模型。
 
   - feed in input and produce output.
   - can be trained via `backpropagation` to improve the model.
@@ -129,9 +138,10 @@ web applications with NLP: why and how
 
 ![bg](lavender)
 
+
 ---
 
-#
+# 大廠的機器學習框架
 
 - [Tensorflow] Google 開發的開源機器學習框架 (2015-)
 
@@ -168,6 +178,8 @@ web applications with NLP: why and how
 - [ml5.js](https://ml5js.org/): 開源友善的架在 `TensorFlow.js` 之上。,
 
 <!-- 舉例：https://julienrioux.medium.com/in-browser-ml-with-react-js-and-ml5-js-f3eeb5149404 -->
+
+- 要跑深度學習模型，也可以直接拉 `Huggingface inference API` (下週主題)
 
 ---
 
@@ -253,6 +265,7 @@ Tensor [[6.9452119],]
 # TensorFlow API
 
 兩個一開始好用的部分
+![bg right width:500](./images/tf_high.png)
 
 - low-level operation API
 
@@ -269,6 +282,9 @@ Tensor [[6.9452119],]
 ---
 
 # 張量 ｜ Tensor
+- a structured set of values of any dimension.
+<!-- a traditional JavaScript array is a tensor, a 2D array is a tensor, and a 512D array is a tensor. TensorFlow.js tensors are the embodiment of these mathematical structures that hold the accelerated signals that feed data into and out of a machine learning model. -->
+
 
 ---
 
@@ -280,13 +296,17 @@ Tensor [[6.9452119],]
 
 - 備料
 - 探勘
-- 定義模型
+- 定義模型 (或直接使用[預訓練好的模型](https://github.com/tensorflow/tfjs-models)，看一下 live demo)
 - 訓練與測試
-- 預測
+- 預測或其他任務
+
+
+
+
 
 ---
 
-# 線性迴歸 linear regression
+# 以線性迴歸預測模型為例
 
 - import data [*]
 - visualize data (via `tfjs-vis`)
@@ -297,14 +317,24 @@ Tensor [[6.9452119],]
 
 ---
 
-# Penguins
+# 先安裝與啟動本地端的伺服器
+
+```bash
+(sudo) npm install http-server -g
+```
+
+- 課程 repo 拉下來，cd 到 `/lab/tf_lab`，執行 `http-server`，開啟瀏覽器，輸入 `localhost:8080`，點選 `linear.html` 即可看到網頁。
+
+- 看一下 `linear.html` 的程式碼，可以看到有引入 `tf-min-js`，以及 `tfjs-vis`，前者是用來做運算，後者是用來視覺化。
+
+- 數據是從 [kaggle datasets](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction)下載的，可以玩玩別的資料。
 
 ---
 
-# NLP 應用實例
+# 期末報告規劃
+![bg](lavender)
 
-How to use tensorflow.js in react.js — Sentimental Analysis
+實作一個 web app，至少有一個 NLP 元素即可。 
 
----
-
-# 期末報告![bg](lavender)
+- 可以決定專案的動機與目標，可以實作或呼叫的預訓練模型，與畫面設計。
+- 期末報告的內容：專案的動機與目標，資料流以及實作過程，以及結果呈現（部署在雲端）（接下來幾週請勿缺席）。
