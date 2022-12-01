@@ -92,28 +92,19 @@ Web applications with NLP: making the web smarter (`NLP-aware`)
 
 ---
 
-- 我們在這門課的重點不是學習**開發**機器學習，而是如何在網頁設計上**使用與部署**機器學習模型。
+- 我們在這門課的重點不是學習**開發**機器學習，而是如何在網頁設計上**使用與部署**機器學習模型。只要有很基本的概念即可。
+
+  - Traing and testing data： train the model which works well for the training data but not for the (unseen) testing data.
+  
+  - 過度擬合 (overfitting)
+
+  - Loss function
+    - a function that measures how well the model performs on the training data.
 
 
----
-
-# Traing and testing data
-
-<!-- 圖示 video3: 5:18-->
-
----
-
-# 過度擬合 (overfitting)
-
-- train the model which works well for the training data but not for the (unseen) testing data.
-
----
-
-# Loss function
+<!-- 圖示 v3: 5:18-->
 
 <!-- 3:7:34 -->
-
-- a function that measures how well the model performs on the training data.
 
 ---
 
@@ -135,29 +126,63 @@ Web applications with NLP: making the web smarter (`NLP-aware`)
 ---
 
 # Transformer
-
+改變了之前DNN的架構，引入 Attention Mechanism，並且將 Encoder-Decoder 架構改為 Encoder-Decoder-Encoder 架構，使得模型可以更有效的處理長序列的資料。
 ![bg](lavender)
+![bg right width:400](./images/transformer.png)
+
+
 
 
 ---
 
-# 大廠的機器學習框架
+# 目前大廠的主要機器學習框架
 
-- [Tensorflow] Google 開發的開源機器學習框架 (2015-)
+- [TensorFlow] Google 開發的開源機器學習框架 (2015-)
+
+  - 大家常聽到的 [Keras](https://keras.io/) 則是架構在 Tensorflow 上的一個高階函式庫。
 
 - [PyTorch] Facebook 開發的開源機器學習框架 (2016-)
 
+
+
+---
+# TensorFlow
+
+- **Tensor+FLow**：輸入/輸出的運算資料是多維度的數值資料（張量，`Tensor`)
+
+- 而建立的模型需要一種稱為計算圖 (computational graphs) 的流程圖來描述訓練過程的數值運算操作。張量經過這些流程 `Flow` 的數值運算後得到模型的輸出。
+  <!-- - TensorFlow is simply referring to the flow of the Tensors in the computational graph. -->
+
+![bg right width:300](./images/tf_graph.gif)
+
+
+
+---
+### 當然我們可以使用 python 或 javascript 搭配 TF 機器學習框架來開發模型。
+
+- `python - TensorFlow - CUDA/cuDNN - GPU`
+
+- `javascript - TensorFlow.js - Eigen - CPU` 
+
+
+
 ---
 
-# 讓前端也可以做機器學習
+# 讓前端也可以做機器學習 ｜ In-browser ML/NLP
 
-- [Tensorflow.js]() (since 2018): Machine Learning library for JavaScript, which makes ML in the browser possible.[*]
+- [Tensorflow.js]() (2018-): Machine Learning library for JavaScript, which makes ML in the browser possible.[*] 也部分支援了 `Keras`。
 
-- 可以充分利用 device features (e.g., camera, microphone, etc.); take advantage of user interaction; utilize the power of the device; help protect the user’s privacy.
+- 可以充分利用裝置 (e.g., camera, microphone, etc.)、 使用者互動、保護用戶隱私等優勢。
 
-- 讓 JS 前端工程師可直接使用 ML 模型 (也可以 import Python 模型)
+- 讓 JS 前端工程師完全不用設定環境，只要有瀏覽器即可直接使用 ML 模型 (也可以 import Python 模型)
 
 > [*] can also use it with `node.js` for server side or backend development.
+
+
+
+
+
+
 
 ---
 
@@ -171,36 +196,49 @@ Web applications with NLP: making the web smarter (`NLP-aware`)
 
  <!-- for js developer -->
 
+
 ---
 
-# 不只有 TF.js 一家
+# WebGL optimizations
+
+![bg right width:500](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsMlDZI7NR4vOkMzmZz-69rC3GIVW_LxxRlDASPk4n8c9nGUvfJGik6RqUEcOnWqrmGto&usqp=CAU)
+
+- WebGL is a JavaScript API for rendering interactive 3D and 2D graphics within any compatible web browser without the use of plug-ins. check [this website](https://get.webgl.org/)
+
+- used by `Tensorflow.js` to run on GPU (not used for visial graphics)
+
+<!-- Graphic cars (GPU) is faster than CPU for matrix operations -->
+<!-- tf.getbackend() -->
+
+> `TensorFlow.js`也支援 WebGL，因此即使在瀏覽器上，我們也能使用 GPU 來加快運算結果，較不用擔心在瀏覽器上的效能限制。
+---
+
+# 更高階的架構也有
 
 - [ml5.js](https://ml5js.org/): 開源友善的架在 `TensorFlow.js` 之上。,
 
 <!-- 舉例：https://julienrioux.medium.com/in-browser-ml-with-react-js-and-ml5-js-f3eeb5149404 -->
 
-- 要跑深度學習模型，也可以直接拉 `Huggingface inference API` (下週主題)
+![bg right width:600](./images/ml5.png)
+
+
+
+
 
 ---
+# ！我不熟悉開發 ML，怎麼做期末專案？  
 
-## Tensorflow.js 是什麼
+- `Tensorflow.js` 提供了一些[預先訓練好的模型](https://www.tensorflow.org/js/models?hl=zh-tw)，可立即用於專案。（可惜目前 NLP 相關的還不多）
 
-TensorFlow makes it easy for beginners and experts to create machine learning models for desktop, mobile, web, and cloud.
+- 但，要跑 transformer-based 深度學習模型，可以直接拉 `Huggingface inference API` (下週主題)
 
-- `Tensor` + `Flow`
-
-- `TensorFlow.js`也支援 WebGL，因此即使在瀏覽器上，我們也能使用 GPU 來加快運算結果，不用擔心在瀏覽器上的效能限制。
 
 ---
+# 兩種方式安裝與執行 `tensorflow.js`
 
-# 安裝與執行
 
-Install `tensorflow.js` in the **browser** and/or for **node.js** \*
-兩種方式
-
-- using the script tag
-
-- installation from NPM and using a build tool like Parcel, WebPack, or Rollup.
+- (in the **browser**) using the script tag.
+- (for **node.js**) installation from NPM.
 
 ```bash
 npm install @tensorflow/tfjs
@@ -214,13 +252,13 @@ yarn add @tensorflow/tfjs
 import * as tf from "@tensorflow/tfjs";
 ```
 
-> - optimizations in each environment are different.
+> optimizations in each environment are different.
 
 ---
 
 # 我們先用 script tag 的方式
 
-- Create a simple HTML file, ddd this script tag to the HTML file: (check [the latest](https://www.tensorflow.org/js/tutorials/setup#installation_from_npm))
+- Create a simple HTML file (e.g., `playground.html`), add this script tag to the HTML file: (check [the latest](https://www.tensorflow.org/js/tutorials/setup#installation_from_npm))
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
@@ -241,18 +279,6 @@ import * as tf from "@tensorflow/tfjs";
 Tensor [[6.9452119],]
 ```
 
----
-
-# WebGL optimizations
-
-![bg right width:500](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsMlDZI7NR4vOkMzmZz-69rC3GIVW_LxxRlDASPk4n8c9nGUvfJGik6RqUEcOnWqrmGto&usqp=CAU)
-
-- WebGL is a JavaScript API for rendering interactive 3D and 2D graphics within any compatible web browser without the use of plug-ins. check [this website](https://get.webgl.org/)
-
-- used by `Tensorflow.js` to run on GPU (not used for visial graphics)
-
-<!-- Graphic cars (GPU) is faster than CPU for matrix operations -->
-<!-- tf.getbackend() -->
 
 ---
 
@@ -260,9 +286,11 @@ Tensor [[6.9452119],]
 
 張量、運算子、模型、層，以及訓練、記憶體管理方法，以及如何寫出簡潔（tidy）的程式碼。
 
----
+[擅用 tensorflow.js api docs](https://js.tensorflow.org/api/latest/)
 
-# TensorFlow API
+<!-- --- -->
+
+<!-- # TensorFlow API
 
 兩個一開始好用的部分
 ![bg right width:500](./images/tf_high.png)
@@ -275,20 +303,52 @@ Tensor [[6.9452119],]
 
 - high-level layers API
   - allows you to define complex model easily
-  - (similar to Keras in TensorFlow Python API)
+  - (similar to Keras in TensorFlow Python API) -->
 
-[擅用 tensorflow.js api docs](https://js.tensorflow.org/api/latest/)
+
 
 ---
 
 # 張量 ｜ Tensor
-- a structured set of values of any dimension.
+- 以程式語言的角度理解成：不同維度 (dimensional) 大小的多維陣列 (array)
+ 
+
 <!-- a traditional JavaScript array is a tensor, a 2D array is a tensor, and a 512D array is a tensor. TensorFlow.js tensors are the embodiment of these mathematical structures that hold the accelerated signals that feed data into and out of a machine learning model. -->
 
+- 張量的維度 (dimension) 可以是任意數量，但是一般來說，我們會使用 0-D tensor (純量 scalar), 1-D tensor (向量 vector), 2-D tensor (矩陣 matrix), 3-D tensor, 4-D tensor, 等等。 
 
+- 基本形狀 (shape) 如：`[樣本數, 特徵1, 特徵2, 特徵3,...]`。逗號分隔的數字，代表維度的大小。
+  - 圖形的資料，通常會是 4-D tensor，有寬、高、色彩數三個維度(特徵)：
+  `[樣本數, 寬, 高, 色彩數]`
+
+> 維度 (dimension) 有時亦稱為軸數 (axis) 或階數 (rank)。
 ---
 
-# operations
+# 張量的建立、取得、變形、運算、記憶體管理。
+<!-- tf.dispose() 釋放記憶體-->
+
+---
+# 視覺化
+
+- 注意 [tfjs-vis](https://js.tensorflow.org/api_vis/latest/) 是獨立的函式庫，要在 HTML 中使用需 script tag 引入。
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis@latest"></script>
+```
+
+- 做圖練習一下
+
+```js
+const data = {
+   values: [[4, 2, 8, 20], [1, 7, 2, 10], [3, 3, 20, 13]],
+   xTickLabels: ['cheese', 'pig', 'font'],
+   yTickLabels: ['speed', 'smoothness', 'dexterity', 'mana'],
+}
+
+// Render to visor
+const surface = { name: 'Heatmap w Custom Labels', tab: 'Charts' };
+tfvis.render.heatmap(surface, data);
+```
 
 ---
 
@@ -315,6 +375,32 @@ Tensor [[6.9452119],]
 
 > [*] [kaggle](www.kaggle.com) 是個好地方
 
+
+---
+## 簡要範例 
+`playground.html`
+
+```js
+// Define a model for linear regression.
+const model = tf.sequential();
+model.add(tf.layers.dense({units: 1, inputShape: [1]}));
+
+// Prepare the model for training: Specify the loss and the optimizer.
+model.compile({loss: 'meanSquaredError', optimizer: 'sgd'});
+
+// Generate some synthetic data for training.
+const xs = tf.tensor2d([1, 2, 3, 4], [4, 1]);
+const ys = tf.tensor2d([1, 3, 5, 7], [4, 1]);
+
+// Train the model using the data.
+model.fit(xs, ys).then(() => {
+  // Use the model to do inference on a data point the model hasn't seen before:
+  // Open the browser devtools to see the output
+  model.predict(tf.tensor2d([5], [1, 1])).print();
+});
+      
+```
+
 ---
 
 # 先安裝與啟動本地端的伺服器
@@ -325,7 +411,7 @@ Tensor [[6.9452119],]
 
 - 課程 repo 拉下來，cd 到 `/lab/tf_lab`，執行 `http-server`，開啟瀏覽器，輸入 `localhost:8080`，點選 `linear.html` 即可看到網頁。
 
-- 看一下 `linear.html` 的程式碼，可以看到有引入 `tf-min-js`，以及 `tfjs-vis`，前者是用來做運算，後者是用來視覺化。
+  - 看一下 `linear.html` 的程式碼，可以看到有引入 `tf-min-js`，以及 `tfjs-vis`，前者是用來做運算，後者是用來視覺化。
 
 - 數據是從 [kaggle datasets](https://www.kaggle.com/datasets/harlfoxem/housesalesprediction)下載的，可以玩玩別的資料。
 

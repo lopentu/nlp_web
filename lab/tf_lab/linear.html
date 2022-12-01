@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>TensorFlow.js linear regression</title>
+  <title>TensorFlow.js 線性迴歸預測模型</title>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -256,7 +256,7 @@
 <!--   Header   -->
 <div class="section no-pad-bot" id="index-banner">
   <div class="container">
-    <h5 class="header center black-text small"> Linear regression with TensorFlow.js</h5>
+    <h3 class="header center black-text large"> TensorFlow.js 線性迴歸預測模型</h3>
     <div class="row center">
       <h6 class="header col s12 light">訓練模型從空間大小預測房價</h6>
     </div>
@@ -264,10 +264,10 @@
 </div>
 
 <!--   Misc buttons   -->
-<div class="section no-pad-bot light-green lighten-4">
+<div class="section no-pad-bot green lighten-4">
   <div class="container">
     <div class="row center">
-      <button id="toggle-button" class="waves-effect waves-light light-blue btn-small" onclick="toggleVisor()">切換 Visor</button>
+      <button id="toggle-button" class="waves-effect waves-light blue btn-small" onclick="toggleVisor()">切換到圖形</button>
       <br/><br/>
     </div>
   </div>
@@ -282,25 +282,25 @@
       <div class="col s12 m6">
         <div class="icon-block">
           <h3 class="center light-blue-text"><i class="material-icons" style="font-size: 2em">build</i></h3>
-          <h5 class="center">Train & Test</h5>
+          <h4 class="center">訓練 & 測試</h4>
 
           <p class="light"></p>
 
           <div>
-            <p><label>Training status:</label></p>
-            <pre class="grey lighten-4" style="overflow-x: auto"><em id="model-status">Loading data...</em></pre>
+            <p><label>訓練狀態:</label></p>
+            <pre class="grey lighten-4" style="overflow-x: auto"><em id="model-status">載入資料中...</em></pre>
 
-            <p><label>Testing status:</label></p>
-            <pre class="grey lighten-4" style="overflow-x: auto"><em id="testing-status">Not yet tested</em></pre>
+            <p><label>測試狀態:</label></p>
+            <pre class="grey lighten-4" style="overflow-x: auto"><em id="testing-status">還沒測試好</em></pre>
 
-            <button autocomplete="off" id="train-button" class="waves-effect light-blue waves-light btn" disabled onclick="train()">Train New Model</button>
-            <button autocomplete="off" id="test-button" class="waves-effect light-blue waves-light btn" disabled onclick="test()">Test Model</button>
+            <button autocomplete="off" id="train-button" class="waves-effect light-blue waves-light btn" disabled onclick="train()">訓練新模型</button>
+            <button autocomplete="off" id="test-button" class="waves-effect light-blue waves-light btn" disabled onclick="test()">測試看看</button>
           </div>
           <br/>
 
           <div>
-            <button autocomplete="off" id="load-button" class="waves-effect light-blue waves-light btn-small" disabled onclick="load()">Load Model</button>
-            <button autocomplete="off" id="save-button" class="waves-effect light-blue waves-light btn-small" disabled onclick="save()">Save Model</button>
+            <button autocomplete="off" id="load-button" class="waves-effect light-blue waves-light btn-small" disabled onclick="load()">載入模型</button>
+            <button autocomplete="off" id="save-button" class="waves-effect light-blue waves-light btn-small" disabled onclick="save()">儲存模型</button>
           </div>
 
         </div>
@@ -310,10 +310,10 @@
       <div class="col s12 m6">
         <div class="icon-block">
           <h3 class="center light-blue-text"><i class="material-icons" style="font-size: 2em">timeline</i></h3>
-          <h5 class="center">Predict</h5>
+          <h4 class="center">預測看看！</h4>
 
-          <label>Square feet of living space: <input type="number" id="prediction-input" placeholder="2000"/></label>
-          <button autocomplete="off" id="predict-button" class="waves-effect light-blue waves-light btn" disabled onclick="predict()">Predict house price</button>
+          <label>平方英尺: <input type="number" id="prediction-input" placeholder="2000"/></label>
+          <button autocomplete="off" id="predict-button" class="waves-effect light-blue waves-light btn" disabled onclick="predict()">預測的房價是</button>
           <p><strong id="prediction-output"></strong></p>
         </div>
       </div>
