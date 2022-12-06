@@ -17,7 +17,7 @@ export function debug_api(prompt_text){
 
 async function query(data, api_token) {
   const response = await fetch(
-    "https://api-inference.huggingface.co/models/bigscience/bloomz",
+    "https://api-inference.huggingface.co/models/bigscience/mt0-xxl-mt",
     {
       headers: { Authorization: `Bearer ${api_token}` },
       method: "POST",

@@ -7,7 +7,7 @@ export default function ChatBox() {
     [
       {
         prompt: "你好阿",
-        reply: "🤖bigscience/bloomz🌸"
+        reply: "🤖bigscience/mt0-xxl-mt🌸"
       }
     ]);
   const [isProcessing, setIsProcessing] = useState(false);
@@ -33,7 +33,7 @@ export default function ChatBox() {
     process_handler(intext).then((reply) => {
       let new_dialogue = Array.from(dialogue_data);
       let last_turn = new_dialogue[new_dialogue.length - 1];
-      console.log("bloomz respond: ", reply);
+      console.log("API respond: ", reply);
       if (reply) {
         last_turn.reply = reply;
       } else {
