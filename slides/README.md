@@ -1,6 +1,4 @@
-# 2022 台大自然語言處理與網路應用：課程資料 ([`nlp_web`](https://lopentu.github.io/nlp_web/))
-
-## Slides
+# 課程投影片
 
 <!-- https://shields.io/ -->
 <p align="center">
@@ -61,11 +59,3 @@
         <img src="https://img.shields.io/badge/slides-week%2013%20(Part%20II)-ff00ff" alt="week 13 (Part II)" />
     </a>
 </p>
-
-## Assignments
-
- |                                                                                      | Title                                       |Submission                                            |Deadline      |
- | ------------------------------------------------------------------------------------ | :-----------------------------------------: | :--------------------------------------------------: | :------------: |
- | [Assignment 1](https://lopentu.github.io/nlp_web/slides/week4.html#31)               | Streamlit NLP App                           |[![](https://img.shields.io/date/1665640800?color=%23888&label=due)](https://classroom.github.com/a/7DktWB93) |  Oct 13 (Thu.), 2022, 14:00 
- | [Assignment 2](https://lopentu.github.io/nlp_web/slides/week10.pdf#view=Fit&page=51) | React App                                   |[![](https://img.shields.io/date/1669875600?color=%23888&label=due)](https://classroom.github.com/a/IS8F00FE) |  Dec 1 (Thu.), 2022, 14:20  
- | [Assignment 3](https://hackmd.io/@howard-haowen/webapps#/6)                          | 臺灣語言的網路應用                          |[![](https://img.shields.io/date/1671119400?color=red&label=due)](https://classroom.github.com/a/faDd107J) |  Dec 15 (Thu.), 2022, 23:50 
