@@ -66,6 +66,6 @@
 
  |                                                                                      | Title                                       |Submission                                            |Deadline      |
  | ------------------------------------------------------------------------------------ | :-----------------------------------------: |----------------------------------------------------- |------------- |
- | [Assignment 1](https://lopentu.github.io/nlp_web/slides/week4.html#31)               | Streamlit NLP App                           |[Submission](https://classroom.github.com/a/7DktWB93) |              |
- | [Assignment 2](https://lopentu.github.io/nlp_web/slides/week10.pdf#view=Fit&page=51) | React App                                   |[Submission](https://classroom.github.com/a/IS8F00FE) |              |
- | [Assignment 3](https://hackmd.io/@howard-haowen/webapps#/6)                          | 臺灣語言的網路應用                          |[Submission](https://classroom.github.com/a/faDd107J) |12/15 (23:50) |
+ | [Assignment 1](https://lopentu.github.io/nlp_web/slides/week4.html#31)               | Streamlit NLP App                           |[Submission](https://classroom.github.com/a/7DktWB93) |  Oct 13 (Thu.), 2022, 14:00
+ | [Assignment 2](https://lopentu.github.io/nlp_web/slides/week10.pdf#view=Fit&page=51) | React App                                   |[Submission](https://classroom.github.com/a/IS8F00FE) |  Dec 1 (Thu.), 2022, 14:20
+ | [Assignment 3](https://hackmd.io/@howard-haowen/webapps#/6)                          | 臺灣語言的網路應用                          |[Submission](https://classroom.github.com/a/faDd107J) |  Dec 15 (Thu.), 2022, 23:50 |
