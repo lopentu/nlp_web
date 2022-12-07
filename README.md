@@ -66,4 +66,4 @@
 
 * [Assignment 1](https://lopentu.github.io/nlp_web/slides/week4.html#31)
 * [Assignment 2](https://lopentu.github.io/nlp_web/slides/week10.pdf#view=Fit&page=51)
-* [Assignment 3](https://hackmd.io/@howard-haowen/webapps#/6)
+* [Assignment 3](https://hackmd.io/@howard-haowen/webapps#/6) [[Submission](https://classroom.github.com/a/faDd107J)]
