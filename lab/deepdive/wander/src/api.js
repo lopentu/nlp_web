@@ -24,6 +24,6 @@ async function query(data, api_token) {
       body: JSON.stringify(data),
     }
   );
-  const result = await response.json();      
+  const result = response.json();      
   return result;
 }
