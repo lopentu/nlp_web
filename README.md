@@ -60,6 +60,10 @@
     <a href="https://lopentu.github.io/nlp_web/slides/week13_NLPweb-JSnTF.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2013%20(Part%20II)-ff00ff" alt="week 13 (Part II)" />
     </a>
+    &emsp;
+    <a href="https://lopentu.github.io/nlp_web/slides/week14_NLP-web-React-steps.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
+        <img src="https://img.shields.io/badge/slides-week%2014-c600ff" alt="week 14 (Part I)" />
+    </a>
 </p>
 
 ## Assignments
