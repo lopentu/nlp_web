@@ -2,4 +2,4 @@
 *.log
 **/node_modules
 .vscode/
-**/_sites
+**/_site
