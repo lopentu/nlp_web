@@ -32,22 +32,26 @@
     <a href="https://www.w3schools.com/js" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/website%20(W3%20School)-week%207-00ff5a" alt="week 7" />
     </a>
-    &emsp;
+    &ensp;&ensp;&ensp;
+    <span></span>
     <!-- <span style="font-size: 5pt">&ensp;</span> -->
     <a href="https://lopentu.github.io/nlp_web/slides/week8.html" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%208-00ffce" alt="week 8" />
     </a>
-    &emsp;
+    &ensp;&ensp;&ensp;
+    <span></span>
     <!-- <span style="font-size: 5pt">&ensp;</span> -->
     <a href="https://lopentu.github.io/nlp_web/slides/week9.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%209-00d2ff" alt="week 9" />
     </a>
-    &emsp;
+    &ensp;&ensp;&ensp;
+    <span></span>
     <!-- <span style="font-size: 5pt">&ensp;</span> -->
     <a href="https://lopentu.github.io/nlp_web/slides/week10.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2010-0078ff" alt="week 10" />
     </a>
-    &emsp;
+    &ensp;&ensp;&ensp;
+    <span></span>
     <!-- <span style="font-size: 5pt">&ensp;</span> -->
     <a href="https://lopentu.github.io/nlp_web/slides/week11.html" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2011-0000ff" alt="week 11" />
