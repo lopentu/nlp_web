@@ -32,19 +32,19 @@
     <a href="https://www.w3schools.com/js" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/website%20(W3%20School)-week%207-00ff5a" alt="week 7" />
     </a>
-    &emsp;
+    &emsp;<span style="font-size: 5pt">&ensp;</span>
     <a href="https://lopentu.github.io/nlp_web/slides/week8.html" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%208-00ffce" alt="week 8" />
     </a>
-    &emsp;
+    &emsp;<span style="font-size: 5pt">&ensp;</span>
     <a href="https://lopentu.github.io/nlp_web/slides/week9.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%209-00d2ff" alt="week 9" />
     </a>
-    &emsp;
+    &emsp;<span style="font-size: 5pt">&ensp;</span>
     <a href="https://lopentu.github.io/nlp_web/slides/week10.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2010-0078ff" alt="week 10" />
     </a>
-    &emsp;
+    &emsp;<span style="font-size: 5pt">&ensp;</span>
     <a href="https://lopentu.github.io/nlp_web/slides/week11.html" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2011-0000ff" alt="week 11" />
     </a>
@@ -53,14 +53,15 @@
     <a href="https://hackmd.io/@howard-haowen/webapps" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2012-7000ff" alt="week 12" />
     </a>
-    &emsp;
+    &emsp;<span style="font-size: 5.7pt">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span>
     <a href="https://lopentu.github.io/nlp_web/slides/week13.html" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2013%20(Part%20I)-ff00ff" alt="week 13 (Part I)" />
     </a>
+    &ensp;&ensp;
     <a href="https://lopentu.github.io/nlp_web/slides/week13_NLPweb-JSnTF.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2013%20(Part%20II)-ff00ff" alt="week 13 (Part II)" />
     </a>
-    &emsp;
+    &emsp;<span style="font-size: 5.7pt">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</span>
     <a href="https://lopentu.github.io/nlp_web/slides/week14_NLP-web-React-steps.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2014-c600ff" alt="week 14 (Part I)" />
     </a>
