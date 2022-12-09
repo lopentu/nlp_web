@@ -33,25 +33,25 @@
         <img src="https://img.shields.io/badge/website%20(W3%20School)-week%207-00ff5a" alt="week 7" />
     </a>
     &ensp;&ensp;&ensp;
-    <span style="font-size: 2ex">1</span>
+    <span style="font-size: 2ex"></span>
     <!-- <span style="font-size: 5pt">&ensp;</span> -->
     <a href="https://lopentu.github.io/nlp_web/slides/week8.html" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%208-00ffce" alt="week 8" />
     </a>
     &ensp;&ensp;&ensp;
-    <span style="font-size: 2ex">1</span>
+    <span style="font-size: 2ex"></span>
     <!-- <span style="font-size: 5pt">&ensp;</span> -->
     <a href="https://lopentu.github.io/nlp_web/slides/week9.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%209-00d2ff" alt="week 9" />
     </a>
     &ensp;&ensp;&ensp;
-    <span style="font-size: 2ex">1</span>
+    <span style="font-size: 2ex"></span>
     <!-- <span style="font-size: 5pt">&ensp;</span> -->
     <a href="https://lopentu.github.io/nlp_web/slides/week10.pdf#view=Fit" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2010-0078ff" alt="week 10" />
     </a>
     &ensp;&ensp;&ensp;
-    <span style="font-size: 2ex">1</span>
+    <span style="font-size: 2ex"></span>
     <!-- <span style="font-size: 5pt">&ensp;</span> -->
     <a href="https://lopentu.github.io/nlp_web/slides/week11.html" target="_blank" rel="noreferrer noopener">
         <img src="https://img.shields.io/badge/slides-week%2011-0000ff" alt="week 11" />
