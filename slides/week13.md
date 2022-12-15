@@ -126,7 +126,7 @@ Web applications with NLP: making the web smarter (`NLP-aware`)
 ---
 
 # Transformer
-改變了之前DNN的架構，引入 Attention Mechanism，並且將 Encoder-Decoder 架構改為 Encoder-Decoder-Encoder 架構，使得模型可以更有效的處理長序列的資料。
+改變了之前DNN的架構，引入 Attention Mechanism，強化了 Encoder-Decoder 架構，使得模型可以更有效的處理長序列的資料。
 ![bg](lavender)
 ![bg right width:400](./images/transformer.png)
 
